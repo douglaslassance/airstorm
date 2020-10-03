@@ -1,0 +1,2148 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"mdc-them",
+				"mdc-theme--background"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"Del",
+				"DeltaTime"
+			],
+			[
+				"Zero",
+				"ZeroVector"
+			],
+			[
+				"ZEro",
+				"IsNearlyZero"
+			],
+			[
+				"Velo",
+				"VelocityToDestination"
+			],
+			[
+				"Veloc",
+				"VelocityToDestination"
+			],
+			[
+				"MIN",
+				"MIN_FLOOR_DIST"
+			],
+			[
+				"A",
+				"ABaseFighter"
+			],
+			[
+				"allowe",
+				"allowedRates"
+			],
+			[
+				"Department",
+				"DepartmentGroup"
+			],
+			[
+				"fram",
+				"frameRange"
+			],
+			[
+				"tan",
+				"tangentType"
+			],
+			[
+				"Fram",
+				"FrameRange"
+			],
+			[
+				"Tange",
+				"tangeantType"
+			],
+			[
+				"speed",
+				"speedScriptController"
+			],
+			[
+				"setAnimati",
+				"setAnimationRange"
+			],
+			[
+				"init",
+				"initialFrameRange"
+			],
+			[
+				"isRe",
+				"isRetimed"
+			],
+			[
+				"Retime",
+				"RetimeType"
+			],
+			[
+				"Scen",
+				"SceneAssembly"
+			],
+			[
+				"cah",
+				"cacheInfo"
+			],
+			[
+				"cache",
+				"cachesFrameRate"
+			],
+			[
+				"uiMatch",
+				"uiMatchActiveRangeACT"
+			],
+			[
+				"uiMath",
+				"uiMatchActiveRangeACT"
+			],
+			[
+				"reti",
+				"retimeCurve"
+			],
+			[
+				"depar",
+				"departmentsByGroup"
+			],
+			[
+				"ui",
+				"uiAbstractOnlyCHK"
+			],
+			[
+				"updat",
+				"updateInterface"
+			],
+			[
+				"uiKey",
+				"uiAffectKeyframesCHB"
+			],
+			[
+				"uiMet",
+				"uiMetadataACT"
+			],
+			[
+				"metada",
+				"metadataeditor"
+			],
+			[
+				"Meta",
+				"MetadataEditor"
+			],
+			[
+				"FBX",
+				"FBXHandler"
+			],
+			[
+				"character",
+				"characterization"
+			],
+			[
+				"uiAf",
+				"uiAffectCachesCHB"
+			],
+			[
+				"uiAffe",
+				"uiAffectKeyframesCHB"
+			],
+			[
+				"uiAffect",
+				"uiAffectKeyframesCHB"
+			],
+			[
+				"uiA",
+				"uiAffectKeyframesCHB"
+			],
+			[
+				"affect",
+				"affectKeyframes"
+			],
+			[
+				"enti",
+				"entityName"
+			],
+			[
+				"Depart",
+				"DepartmentGroup"
+			],
+			[
+				"Dep",
+				"DepartmentGroups"
+			],
+			[
+				"dep",
+				"departmentGroup"
+			],
+			[
+				"InvalidF",
+				"InvalidFPSType"
+			],
+			[
+				"has",
+				"hasValidFrameRate"
+			],
+			[
+				"cont",
+				"contentPath"
+			],
+			[
+				"fr",
+				"frameRange"
+			],
+			[
+				"anim",
+				"animationFileName"
+			],
+			[
+				"playbl",
+				"playblastSequence"
+			],
+			[
+				"depart",
+				"department"
+			],
+			[
+				"pla",
+				"playblastSequence"
+			],
+			[
+				"block",
+				"blockSignals"
+			],
+			[
+				"uiVis",
+				"uiVisibilityHiddenACT"
+			],
+			[
+				"uiSele",
+				"uiSelectGeometriesACT"
+			],
+			[
+				"uiSel",
+				"uiSelectDeformersACT"
+			],
+			[
+				"FPS",
+				"FPSChangeType"
+			],
+			[
+				"uiAffec",
+				"uiAffectAnimationCHB"
+			],
+			[
+				"uiAff",
+				"uiAffectAnimationCHB"
+			],
+			[
+				"post",
+				"postPerformance"
+			],
+			[
+				"outTangentT",
+				"outTangentType"
+			],
+			[
+				"inTan",
+				"inTangentType"
+			],
+			[
+				"outTn",
+				"outTangentType"
+			],
+			[
+				"uiPub",
+				"uiExportAudioBreakoutCHB"
+			],
+			[
+				"publish",
+				"publishPCPreviewEnvironments"
+			],
+			[
+				"check",
+				"checkSelectedItems"
+			],
+			[
+				"publi",
+				"publishInformation"
+			],
+			[
+				"uiDeb",
+				"uiDebugACT"
+			],
+			[
+				"retime",
+				"retime_values"
+			],
+			[
+				"select",
+				"selectedItems"
+			],
+			[
+				"direc",
+				"directoryName"
+			],
+			[
+				"uiFa",
+				"uiProcessInFarmCHB"
+			],
+			[
+				"vegas",
+				"vegasevent"
+			],
+			[
+				"selec",
+				"selectedItems"
+			],
+			[
+				"layout",
+				"layoutpublishlib"
+			],
+			[
+				"ex",
+				"exec_"
+			],
+			[
+				"postper",
+				"postperformance"
+			],
+			[
+				"inTangetn",
+				"inTangentLength"
+			],
+			[
+				"currentf",
+				"currentFileName"
+			],
+			[
+				"is",
+				"isinstance"
+			],
+			[
+				"uiOth",
+				"uiOtherPackagesCBX"
+			],
+			[
+				"Point",
+				"Point_Cache"
+			],
+			[
+				"trans",
+				"Transform_Cache"
+			],
+			[
+				"setProp",
+				"setPropertyController"
+			],
+			[
+				"char",
+				"characterSets"
+			],
+			[
+				"cha",
+				"characterSets"
+			],
+			[
+				"cm",
+				"cmds"
+			],
+			[
+				"for",
+				"forceActorSpace"
+			],
+			[
+				"miss",
+				"missingOnly"
+			],
+			[
+				"uiM",
+				"uiMissingOnlyCHB"
+			],
+			[
+				"pyth",
+				"pythonScritpPath"
+			],
+			[
+				"out",
+				"outTangentType"
+			],
+			[
+				"play",
+				"enablePlaybackGraph"
+			],
+			[
+				"warp",
+				"warpSimulation"
+			],
+			[
+				"PostPro",
+				"PostPerformance"
+			],
+			[
+				"convers",
+				"conversionRatio"
+			],
+			[
+				"exe",
+				"except"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"caches",
+				"cachesFrameRate"
+			],
+			[
+				"FC",
+				"FCurve"
+			],
+			[
+				"dot",
+				"dotxsiio"
+			],
+			[
+				"inT",
+				"inTangentAngle"
+			],
+			[
+				"free",
+				"freeHandle"
+			],
+			[
+				"departmentgr",
+				"departmentsByGroup"
+			],
+			[
+				"fre",
+				"freeHandle"
+			],
+			[
+				"inTa",
+				"inTangentLength"
+			],
+			[
+				"fCur",
+				"fCurveElement"
+			],
+			[
+				"prop",
+				"properties"
+			],
+			[
+				"outTa",
+				"outTangentType"
+			],
+			[
+				"_in",
+				"_inTangentType"
+			],
+			[
+				"_nati",
+				"_nativeToAbstractTypes"
+			],
+			[
+				"toXML",
+				"toXMLElement"
+			],
+			[
+				"fromXm",
+				"fromXMLElement"
+			],
+			[
+				"controll",
+				"controllerType"
+			],
+			[
+				"Post",
+				"PostPerformance"
+			],
+			[
+				"appl",
+				"applyRetimeCurve"
+			],
+			[
+				"end",
+				"endFrame"
+			],
+			[
+				"start",
+				"startFrame"
+			],
+			[
+				"Key",
+				"KeyAttribute"
+			],
+			[
+				"needsR",
+				"needsRetime"
+			],
+			[
+				"RETIME",
+				"Retime"
+			],
+			[
+				"from",
+				"fromXml"
+			],
+			[
+				"uiShot",
+				"uiUpdateShotgunCHB"
+			],
+			[
+				"uiSho",
+				"uiUpdateShotgunCHB"
+			],
+			[
+				"ref",
+				"reference"
+			],
+			[
+				"refer",
+				"isReferenced"
+			],
+			[
+				"local",
+				"localRetimeCurve"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "airstorm/__init__.py",
+			"settings":
+			{
+				"buffer_size": 88,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Douglas/Google/Work/Resources/ZSH/Home/zshrc.sh",
+			"settings":
+			{
+				"buffer_size": 3891,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Python 3.8.6 (default, Sep 28 2020, 04:41:02) \n[Clang 11.0.3 (clang-1103.0.32.62)] on darwin\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>> import json\n>>> json\n<module 'json' from '/opt/local/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/json/__init__.py'>\n>>> json.loads\n<function loads at 0x10e82be50>\n>>> json.loads('{\"toto\":5}')\n{'toto': 5}\n>>> ",
+			"settings":
+			{
+				"buffer_size": 395,
+				"line_ending": "Unix",
+				"name": "*REPL* [python]",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/Virtualenv/Python + Virtualenv.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"repl",
+				"SublimeREPL: Python"
+			],
+			[
+				"jsons",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"them",
+				"UI: Select Theme"
+			],
+			[
+				"pip install",
+				"Package Control: Install Package"
+			],
+			[
+				"run",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"print",
+				"Preferences: SublimeLinter Settings"
+			],
+			[
+				"repe",
+				"SublimeREPL: Python - execnet"
+			],
+			[
+				"run pyth",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"run python",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"run py",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"run pyt",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"python",
+				"SublimeREPL: Python"
+			],
+			[
+				"beau",
+				"HTMLBeautify"
+			],
+			[
+				"rein",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"remi pa",
+				"npm: Remove/Uninstall Package"
+			],
+			[
+				"insn",
+				"npm: Install and Save Package"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"lipb",
+				"LoremIpsum: (5) a bit"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"cop",
+				"File: Copy Path"
+			],
+			[
+				"packa rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"diff",
+				"Git: Diff Current File"
+			],
+			[
+				"discover",
+				"Package Control: Discover Packages"
+			],
+			[
+				"format",
+				"Clang Format: Format Selection"
+			],
+			[
+				"fomat",
+				"Clang Format: Format Selection"
+			],
+			[
+				"remoe",
+				"Package Control: Remove Channel"
+			],
+			[
+				"send to ",
+				"SublimeSendToPasteBin: Paste Selected Text"
+			],
+			[
+				"pase",
+				"SublimeSendToPasteBin: Paste Selected Text"
+			],
+			[
+				"paste",
+				"SublimeSendToPasteBin: Paste Selected Text"
+			],
+			[
+				"sendto",
+				"SublimeSendToPasteBin: Paste Selected Text"
+			],
+			[
+				"send to",
+				"SublimeSendToPasteBin: Paste Selected Text"
+			],
+			[
+				"clang",
+				"Clang Format: Format Selection"
+			],
+			[
+				"formar",
+				"Clang Format: Format Selection"
+			],
+			[
+				"forma",
+				"Clang Format: Set Path"
+			],
+			[
+				"fom",
+				"Clang Format: Format Selection"
+			],
+			[
+				"formart",
+				"Clang Format: Format Selection"
+			],
+			[
+				"commi",
+				"TortoiseSVN: Commit"
+			],
+			[
+				"comm",
+				"TortoiseSVN: Commit"
+			],
+			[
+				"log",
+				"TortoiseSVN: Log"
+			],
+			[
+				"git",
+				"Git: Commit history"
+			],
+			[
+				"revert",
+				"File: Revert"
+			],
+			[
+				"comi",
+				"TortoiseSVN: Commit"
+			],
+			[
+				"com",
+				"TortoiseSVN: Commit"
+			],
+			[
+				"tortois",
+				"TortoiseSVN: Log"
+			],
+			[
+				"aut",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"auto",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"autot",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"repl py",
+				"SublimeREPL: Python"
+			],
+			[
+				"coom",
+				"File: Copy Path From Project"
+			],
+			[
+				"upda",
+				"TortoiseSVN: Update"
+			],
+			[
+				"commit",
+				"TortoiseSVN: Commit"
+			],
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"package instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package disc",
+				"Package Control: Discover Packages"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"rever",
+				"TortoiseSVN: Revert"
+			],
+			[
+				"update",
+				"TortoiseSVN: Update"
+			],
+			[
+				"comit",
+				"TortoiseSVN: Commit"
+			],
+			[
+				"upd",
+				"TortoiseSVN: Update"
+			],
+			[
+				"repl pyt",
+				"SublimeREPL: Python"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"beauty",
+				"HTMLBeautify"
+			],
+			[
+				"up",
+				"TortoiseSVN: Update"
+			],
+			[
+				"commt",
+				"Toggle Comment"
+			],
+			[
+				"reve",
+				"TortoiseSVN: Revert"
+			],
+			[
+				"coo",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"pepe",
+				"PEP8: Format Code"
+			],
+			[
+				"pep",
+				"PEP8: Format Code"
+			],
+			[
+				"pep8",
+				"PEP8: Format Code"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"package rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"svn",
+				"TortoiseSVN: Log"
+			],
+			[
+				"updat",
+				"TortoiseSVN: Update"
+			],
+			[
+				"form",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"tortoise",
+				"TortoiseSVN: Log"
+			],
+			[
+				"stack",
+				"Stackoverflow: Search from Input"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"tortoi",
+				"TortoiseSVN: Log"
+			],
+			[
+				"INSTALL",
+				"Package Control: Install Package"
+			],
+			[
+				"package re",
+				"Package Control: Remove Package"
+			],
+			[
+				"raise",
+				"Convert Case: Title Case"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 728.0
+	},
+	"console":
+	{
+		"height": 196.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Douglas/Desktop/airstorm",
+		"/Users/Douglas/Desktop/airstorm/airstorm",
+		"/Users/Douglas/Desktop/airstorm/tests"
+	],
+	"file_history":
+	[
+		"/Users/Douglas/Desktop/airstorm/setup.py",
+		"/Users/Douglas/Google/Work/Resources/ZSH/Home/zshrc.sh",
+		"/Users/Douglas/Desktop/airstorm/tests/__init__.py",
+		"/Users/Douglas/Desktop/airstorm/.flake8",
+		"/Users/Douglas/Desktop/schema.json",
+		"/Users/Douglas/Desktop/airstorm/airstorm/__init__.py",
+		"/Users/Douglas/Desktop/airstorm/airstorm.sublime-project",
+		"/Users/Douglas/Google/Work/Resources/ZSH/Home/untitled",
+		"/Users/Douglas/Desktop/PARIS FLAT 4G.PDF",
+		"/Users/Douglas/Desktop/pass.txt",
+		"/Users/Douglas/Desktop/sylablescombiner.py",
+		"/Users/Douglas/Desktop/Kevin.txt",
+		"/Users/Douglas/Google/Shared/Weatherford Drive/Soil Report/MaxDesk.ini",
+		"/Users/Douglas/Google/Shared/Weatherford Drive/Soil Report/maxdesk.ini2",
+		"/Applications/Autodesk/maya2015/devkit/devkit/other/pymel/extras/completion/py/maya/app/mayabullet/SolverUI.py",
+		"/Users/Douglas/Desktop/Flask/static/test.py",
+		"/Users/Douglas/Desktop/aphrodite/package.json",
+		"/Users/Douglas/Desktop/mdc-blur/mdc-blur.scss",
+		"/Users/Douglas/Desktop/aphrodite/node_modules/material-components-web/material-components-web.scss",
+		"/Users/Douglas/Desktop/aphrodite/node_modules/mdc-blur/mdc-blur.scss",
+		"/Users/Douglas/Desktop/aphrodite/webpack.config.js",
+		"/Users/Douglas/Desktop/aphrodite/src/css/index.css",
+		"/Users/Douglas/Desktop/aphrodite/src/css",
+		"/Users/Douglas/Desktop/aphrodite/index.js",
+		"/Users/Douglas/Desktop/pb/pbconfig.json",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/Animation/AnimInstance.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/Components/InputComponent.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Public/AnimEncoding.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Private/Animation/AnimSequence.cpp",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Public/Animation/AnimTypes.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/Animation/AnimSequence.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/Animation/AnimMontage.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/Animation/AnimSequenceBase.h",
+		"/Users/Shared/UnrealEngine/4.11/Engine/Binaries/HTML5/UE4Game.js.symbols",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Private/Animation/AnimSequenceBase.cpp",
+		"/Users/Douglas/Desktop/**Hello EpicGames,**",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Private/Animation/AnimEncoding.cpp",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Editor/BlueprintGraph/Private/K2Node_GetDataTableRow.cpp",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Editor/BlueprintGraph/Classes/K2Node_GetDataTableRow.h",
+		"/Users/Shared/UnrealEngine/GitHub/Engine/Source/Runtime/Engine/Classes/Engine/DataTable.h",
+		"/Users/Shared/UnrealEngine/GitHub/UE4.sublime-project",
+		"/Users/Shared/UnrealEngine/4.11/Engine/Source/Runtime/UMG/Public/Components/Image.h",
+		"/Users/Shared/UnrealEngine/4.11/Engine/Source/Runtime/Engine/Private/Animation/AnimSequence.cpp",
+		"/Users/Shared/UnrealEngine/4.11/Engine/Source/Runtime/Engine/Private/SkeletalMesh.cpp",
+		"/Users/Shared/UnrealEngine/4.11/Engine/Source/Runtime/Engine/Private/Components/SkeletalMeshComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.11/Engine/Source/Runtime/Engine/Classes/Components/SkeletalMeshComponent.h",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Kick.sublime-project",
+		"/Users/Shared/UnrealEngine/GitHub/ue.sublime-project",
+		"/Users/Shared/UnrealEngine/4.11/Engine/Source/Runtime/Engine/Private/Animation/AnimInstance.cpp",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Source/Kick/FighterPawn.h",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Source/Kick/FighterPawn.cpp",
+		"/Users/Douglas/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Character.cpp",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/.gitignore",
+		"/Users/Douglas/.gitignore_global",
+		"/Users/Douglas/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/MovementComponent.cpp",
+		"/Users/Douglas/Desktop/coco.html",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/PawnMovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Config/DefaultEngine.ini",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/FloatingPawnMovement.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Pawn.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/NavMovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/GameFramework/PawnMovementComponent.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/GameFramework/MovementComponent.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/ActorComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/Components/BoxComponent.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/ShapeComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/PrimitiveComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Components/BoxComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/Components/ShapeComponent.h",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Source/Kick/FighterMovementComponent2.h",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Source/Kick/FighterMovementComponent2.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/GameFramework/DefaultPawn.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/DefaultPawn.cpp",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Classes/Components/ActorComponent.h",
+		"/Users/Shared/UnrealEngine/4.10/Engine/Source/Runtime/Engine/Private/Actor.cpp",
+		"/Users/Shared/UnrealEngine/4.9/Engine/Source/Runtime/Engine/Private/Components/SkeletalMeshComponent.cpp",
+		"/Users/Douglas/Desktop/4r7p2/read me.txt",
+		"/Users/Shared/UnrealEngine/4.9/Engine/Source/Runtime/Engine/Classes/Components/SkeletalMeshComponent.h",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Source/Kick/CustomSkeletalMeshComponent.cpp",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Source/Kick/CustomSkeletalMeshComponent.h",
+		"/Users/Shared/UnrealEngine/4.9/Engine/Source/Runtime/Engine/Classes/Animation/Skeleton.h",
+		"/Users/Douglas/Documents/Unreal Projects/Punch/Source/Kick/BaseFighter.cpp",
+		"/Users/Shared/UnrealEngine/4.9/Engine/Source/Runtime/Engine/Classes/Engine/SkeletalMesh.h",
+		"/Users/Shared/UnrealEngine/4.9/Engine/Source/Runtime/Engine/Private/SkeletalMesh.cpp",
+		"/Users/Douglas/Library/Application Support/Sublime Text 3/Packages/User/SendToPasteBin.sublime-settings",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Source/Kick/BaseFighter.h",
+		"/Users/Douglas/Library/Application Support/Sublime Text 3/Packages/SendToPasteBin/README.md",
+		"/Users/Douglas/Library/Application Support/Sublime Text 3/Packages/SendToPasteBin/SendToPasteBin.sublime-settings",
+		"/Users/Douglas/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/Character.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/Components/NavMovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Classes/GameFramework/NavMovementComponent.h",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/Components/PawnMovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/FloatingPawnMovement.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Classes/GameFramework/FloatingPawnMovement.h",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/Components/MovementComponent.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/Pawn.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Private/DefaultPawn.cpp",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Classes/GameFramework/MovementComponent.h",
+		"/Users/Shared/UnrealEngine/4.8/Engine/Source/Runtime/Engine/Classes/GameFramework/DefaultPawn.h",
+		"/Users/Douglas/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Source/Kick/BaseFighter.cpp",
+		"/Users/Douglas/Unreal/Headers",
+		"/Users/Douglas/Unreal/Headers/Character.h",
+		"/Users/Douglas/Unreal/Implementations/Character.cpp",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Kick.sublime-project",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Source/Kick/Kick.h",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Source/Kick/State.h",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Source/Kick/Kick.Build.cs",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Source/Kick/StateMachineComponent.cpp",
+		"/Users/Douglas/.profile",
+		"/Users/Douglas/.zshrc",
+		"/Users/Douglas/Google/Work/Projects/Punch/Code/Source/Kick/FighterMovementComponent.cpp"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 292.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"AIRSTORM",
+			"airstorm",
+			"AIRSTORM",
+			"airstorm",
+			"AIRSTORM",
+			"Dropbox",
+			"Resource",
+			"Dropbox"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "airstorm/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 88,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										53,
+										54
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										37,
+										38
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"git_gutter_is_enabled": true,
+							"glsv_configured": true,
+							"glsv_enabled": 1,
+							"glsv_spec": 0,
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Douglas/Google/Work/Resources/ZSH/Home/zshrc.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3891,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3200,
+								3200
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"git_gutter_is_enabled": false,
+							"glsv_configured": true,
+							"glsv_enabled": 1,
+							"glsv_spec": 0,
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1448.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								395,
+								395
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"auto_indent": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"default_dir": "/Users/Douglas/Desktop/airstorm/airstorm",
+							"detect_indentation": false,
+							"git_gutter_is_enabled": false,
+							"glsv_configured": true,
+							"glsv_enabled": 1,
+							"glsv_spec": 0,
+							"gutter": false,
+							"history_arrows": true,
+							"indent_subsequent_lines": false,
+							"line_numbers": false,
+							"repl": true,
+							"repl_external_id": "python",
+							"repl_id": "0a4053445b274a08af51c8de7df80fc1",
+							"repl_restart_args":
+							{
+								"cmd":
+								[
+									"python",
+									"-i",
+									"-u"
+								],
+								"cwd": "$file_path",
+								"encoding": "utf8",
+								"extend_env":
+								{
+									"PYTHONIOENCODING": "utf-8"
+								},
+								"external_id": "python",
+								"syntax": "Packages/Python/Python.tmLanguage",
+								"type": "subprocess"
+							},
+							"repl_sublime2": false,
+							"show_definitions": false,
+							"smart_indent": false,
+							"spell_check": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 100.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.624713955355,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 138.0
+	},
+	"output.exec":
+	{
+		"height": 144.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "airstorm.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"inputcomp",
+				"Runtime Headers/Components/InputComponent.h"
+			],
+			[
+				"animins",
+				"Runtime Headers/Animation/AnimInstance.h"
+			],
+			[
+				"animmon",
+				"Runtime Headers/Animation/AnimMontage.h"
+			],
+			[
+				"enginetypes",
+				"Runtime Headers/Engine/EngineTypes.h"
+			],
+			[
+				"animsequ",
+				"Runtime Headers/Animation/AnimSequenceBase.h"
+			],
+			[
+				"charactermov",
+				"Runtime Headers/GameFramework/CharacterMovementComponent.h"
+			],
+			[
+				"enginetype",
+				"Source/Runtime/Engine/Public/Animation/AnimTypes.h"
+			],
+			[
+				"animseqe",
+				"Runtime Implementations/Animation/AnimSequenceBase.cpp"
+			],
+			[
+				"animsequencebas",
+				"Runtime Headers/Animation/AnimSequenceBase.h"
+			],
+			[
+				"anime",
+				"Source/Runtime/Engine/Public/AnimEncoding.h"
+			],
+			[
+				"animenco",
+				"Runtime Implementations/Animation/AnimEncoding.cpp"
+			],
+			[
+				"animsequnece.cpp",
+				"Runtime Implementations/Animation/AnimSequence.cpp"
+			],
+			[
+				"datatable.",
+				"Engine Headers/Engine/DataTable.h"
+			],
+			[
+				"getdatat",
+				"Editor Implementations/K2Node_GetDataTableRow.cpp"
+			],
+			[
+				"datatablerow",
+				"Editor Headers/K2Node_GetDataTableRow.h"
+			],
+			[
+				"skeletameshcomp",
+				"Headers/Components/SkeletalMeshComponent.h"
+			],
+			[
+				"skeletalmeshcompo",
+				"Implementations/Components/SkeletalMeshComponent.cpp"
+			],
+			[
+				"skeletalmesh",
+				"Implementations/SkeletalMesh.cpp"
+			],
+			[
+				"animationsequence",
+				"Implementations/Animation/AnimSequence.cpp"
+			],
+			[
+				"charac",
+				"Headers/GameFramework/Character.h"
+			],
+			[
+				"acharacter",
+				"Implementations/Character.cpp"
+			],
+			[
+				"movecomp",
+				"Implementations/Components/MovementComponent.cpp"
+			],
+			[
+				"charact",
+				"Headers/GameFramework/Character.h"
+			],
+			[
+				"pawnmove",
+				"Implementations/Components/PawnMovementComponent.cpp"
+			],
+			[
+				"charactermove",
+				"Headers/GameFramework/CharacterMovementComponent.h"
+			],
+			[
+				"charactern",
+				"Implementations/Components/CharacterMovementComponent.cpp"
+			],
+			[
+				"movemen",
+				"Implementations/Components/MovementComponent.cpp"
+			],
+			[
+				"primitiv",
+				"Headers/Components/PrimitiveComponent.h"
+			],
+			[
+				"pawn",
+				"Implementations/Pawn.cpp"
+			],
+			[
+				"floating",
+				"Implementations/FloatingPawnMovement.cpp"
+			],
+			[
+				"nav",
+				"Implementations/Components/NavMovementComponent.cpp"
+			],
+			[
+				"pawnmovem",
+				"Implementations/Components/PawnMovementComponent.cpp"
+			],
+			[
+				"actorcom",
+				"Implementations/Components/ActorComponent.cpp"
+			],
+			[
+				"pawnmov",
+				"Implementations/Components/PawnMovementComponent.cpp"
+			],
+			[
+				"box",
+				"Headers/Components/BoxComponent.h"
+			],
+			[
+				"primitivecomp",
+				"Implementations/Components/PrimitiveComponent.cpp"
+			],
+			[
+				"shapeco",
+				"Implementations/Components/ShapeComponent.cpp"
+			],
+			[
+				"boxco",
+				"Implementations/Components/BoxComponent.cpp"
+			],
+			[
+				"scenecom",
+				"Headers/Components/SceneComponent.h"
+			],
+			[
+				"scenecomponent",
+				"Implementations/Components/SceneComponent.cpp"
+			],
+			[
+				"shapecom",
+				"Implementations/Components/ShapeComponent.cpp"
+			],
+			[
+				"boxc",
+				"Headers/Components/BoxComponent.h"
+			],
+			[
+				"shapec",
+				"Headers/Components/ShapeComponent.h"
+			],
+			[
+				"pawnmovementcpp",
+				"Implementations/Components/PawnMovementComponent.cpp"
+			],
+			[
+				"movement",
+				"Headers/GameFramework/MovementComponent.h"
+			],
+			[
+				"charactermovement",
+				"Headers/GameFramework/CharacterMovementComponent.h"
+			],
+			[
+				"pawnmovemen",
+				"Implementations/Components/PawnMovementComponent.cpp"
+			],
+			[
+				"movementcomp",
+				"Implementations/Components/NavMovementComponent.cpp"
+			],
+			[
+				"movementco",
+				"Implementations/Components/MovementComponent.cpp"
+			],
+			[
+				"defaultpawn",
+				"Headers/GameFramework/DefaultPawn.h"
+			],
+			[
+				"primitivecomponent",
+				"Headers/Components/PrimitiveComponent.h"
+			],
+			[
+				"defaultpwn",
+				"Implementations/DefaultPawn.cpp"
+			],
+			[
+				"movementcom",
+				"Implementations/Components/CharacterMovementComponent.cpp"
+			],
+			[
+				"actorcomp",
+				"Headers/Components/ActorComponent.h"
+			],
+			[
+				"acto",
+				"Implementations/Actor.cpp"
+			],
+			[
+				"customse",
+				"Kick/CustomSkeletalMeshComponent.cpp"
+			],
+			[
+				"skeletalmeshcomp",
+				"Implementations/Components/SkeletalMeshComponent.cpp"
+			],
+			[
+				"skeletal",
+				"Headers/Engine/SkeletalMesh.h"
+			],
+			[
+				"skelet",
+				"Headers/Animation/Skeleton.h"
+			],
+			[
+				"skele",
+				"Implementations/SkeletalMesh.cpp"
+			],
+			[
+				"chara",
+				"Implementations/Character.cpp"
+			],
+			[
+				"float",
+				"Implementations/FloatingPawnMovement.cpp"
+			],
+			[
+				"pawnomo",
+				"Implementations/Components/PawnMovementComponent.cpp"
+			],
+			[
+				"aactor",
+				"Headers/Actor.h"
+			],
+			[
+				"navmovemcom",
+				"Implementations/Components/NavMovementComponent.cpp"
+			],
+			[
+				"character",
+				"Implementations/Components/CharacterMovementComponent.cpp"
+			],
+			[
+				"charactem",
+				"Implementations/Components/CharacterMovementComponent.cpp"
+			],
+			[
+				"floatin",
+				"Headers/FloatingPawnMovement.h"
+			],
+			[
+				"charactermv",
+				"Implementations/Components/CharacterMovementComponent.cpp"
+			],
+			[
+				"defaut",
+				"Implementations/DefaultPawn.cpp"
+			],
+			[
+				"default",
+				"Headers/DefaultPawn.h"
+			],
+			[
+				"actor",
+				"Headers/Actor.h"
+			],
+			[
+				"pawnmo",
+				"Implementations/Components/PawnMovementComponent.cpp"
+			],
+			[
+				"navmove",
+				"Implementations/Components/NavMovementComponent.cpp"
+			],
+			[
+				"fighter",
+				"Kick/FighterMovementComponent.h"
+			],
+			[
+				"floati",
+				"Headers/FloatingPawnMovement.h"
+			],
+			[
+				"fightermoc",
+				"Kick/FighterMovementComponent.cpp"
+			],
+			[
+				"charace",
+				"Unreal/Implementations/Character.cpp"
+			],
+			[
+				"characte",
+				"Unreal/Headers/Character.h"
+			],
+			[
+				"softimag",
+				"api\\softimage\\softimagescene.py"
+			],
+			[
+				"shotplay",
+				"cinematic\\gui\\dialog\\shotplayblasterdialog.py"
+			],
+			[
+				"shotimporter",
+				"cinematic\\gui\\dialog\\shotimporterdialog.py"
+			],
+			[
+				"studiomaxcont",
+				"api\\studiomax\\studiomaxsceneanimationcontroller.py"
+			],
+			[
+				"shotimapo",
+				"blur3d\\pipe\\cinematic\\gui\\dialog\\shotimporterdialog.py"
+			],
+			[
+				"shottree",
+				"cinematic\\gui\\treewidgetitem\\shottreewidgetitem.py"
+			],
+			[
+				"assettree",
+				"cinematic\\gui\\treewidgetitem\\assettreewidgetitem.py"
+			],
+			[
+				"asset.py",
+				"cinematic\\api\\asset.py"
+			],
+			[
+				"const",
+				"blur3d\\constants.py"
+			],
+			[
+				"shotrender",
+				"cinematic\\gui\\dialog\\shotrendererdialog.py"
+			],
+			[
+				"shotexport",
+				"cinematic\\gui\\dialog\\shotexporterdialog.py"
+			],
+			[
+				"constants",
+				"blur3d\\constants.py"
+			],
+			[
+				"scenepy",
+				"cinematic\\api\\scene.py"
+			],
+			[
+				"shotplayblast",
+				"cinematic\\gui\\dialog\\shotplayblasterdialog.py"
+			],
+			[
+				"shotimport",
+				"cinematic\\gui\\dialog\\shotimporterdialog.py"
+			],
+			[
+				"fcurve",
+				"blur3d\\api\\classes\\fcurve.py"
+			],
+			[
+				"shotplaybl",
+				"cinematic\\gui\\dialog\\shotplayblasterdialog.py"
+			],
+			[
+				"playb",
+				"cinematic\\gui\\widget\\playblaster.py"
+			],
+			[
+				"studioma",
+				"api\\studiomax\\studiomaxsceneanimationcontroller.py"
+			],
+			[
+				"layoutpublishlib",
+				"blur3d\\lib\\layoutpublishlib\\__init__.py"
+			],
+			[
+				"softimagepub",
+				"blur3d\\lib\\layoutpublishlib\\scripts\\softimage_publish.py"
+			],
+			[
+				"studiomaxscenani",
+				"api\\studiomax\\studiomaxsceneanimationcontroller.py"
+			],
+			[
+				"shotimpo",
+				"blur3d\\pipe\\cinematic\\gui\\dialog\\shotimporterdialog.py"
+			],
+			[
+				"assetret",
+				"cinematic\\gui\\widget\\assetretargeterwidget.py"
+			],
+			[
+				"studiomaxkey",
+				"blur3d\\api\\studiomax\\studiomaxsceneanimationkey.py"
+			],
+			[
+				"shotimpor",
+				"cinematic\\gui\\dialog\\shotimporterdialog.py"
+			],
+			[
+				"enum",
+				"blurdev\\enum.py"
+			],
+			[
+				"shotplayb",
+				"cinematic\\gui\\dialog\\shotplayblasterdialog.py"
+			],
+			[
+				"studiomaxscene",
+				"api\\studiomax\\studiomaxscene.py"
+			],
+			[
+				"abstractscne",
+				"api\\abstract\\abstractsceneanimationcontroller.py"
+			],
+			[
+				"constan",
+				"blur3d\\constants.py"
+			],
+			[
+				"studiomaxsc",
+				"api\\studiomax\\studiomaxsceneanimationcontroller.py"
+			],
+			[
+				"abstractanim",
+				"api\\abstract\\abstractsceneanimationcontroller.py"
+			],
+			[
+				"softimage",
+				"api\\softimage\\softimagescene.py"
+			],
+			[
+				"constant",
+				"blur3d\\constants.py"
+			],
+			[
+				"softimageob",
+				"api\\softimage\\softimagesceneobject.py"
+			],
+			[
+				"studio",
+				"api\\studiomax\\studiomaxscene.py"
+			],
+			[
+				"studiomaxscen",
+				"api\\studiomax\\studiomaxsceneobject.py"
+			],
+			[
+				"",
+				"blur3d\\api\\studiomax\\studiomaxsceneanimationcontroller.py"
+			],
+			[
+				"assetreta",
+				"cinematic\\gui\\widget\\assetretargeterwidget.py"
+			],
+			[
+				"camera.py",
+				"cinematic\\api\\camera\\camera.py"
+			],
+			[
+				"abstractani",
+				"api\\abstract\\abstractsceneanimationcontroller.py"
+			],
+			[
+				"studiomaxscenecon",
+				"api\\studiomax\\studiomaxsceneanimationcontroller.py"
+			],
+			[
+				"consta",
+				"blur3d\\constants.py"
+			],
+			[
+				"shotplayblaster",
+				"cinematic\\gui\\dialog\\shotplayblasterdialog.py"
+			],
+			[
+				"shotmana",
+				"cinematic\\gui\\window\\shotmanagerwindow.py"
+			],
+			[
+				"studiomaxcontro",
+				"api\\studiomax\\studiomaxsceneanimationcontroller.py"
+			],
+			[
+				"camera.p",
+				"cinematic\\api\\camera\\camera.py"
+			],
+			[
+				"scene.",
+				"cinematic\\api\\scene.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

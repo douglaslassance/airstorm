@@ -1,2 +1,2 @@
 # airstorm
-A dynamic ORM for Airtable.
+The dynamic ORM for Airtable.
