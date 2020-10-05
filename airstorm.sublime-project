@@ -6,10 +6,10 @@
 			[
 				"pip",
 				"install",
-				"-e",
-				"$project_path[dev]",
+				"--editable",
+				".[ci]",
 			],
-			"name": "Install Requirements",
+			"name": "Install requirements",
 			"selector": "source.python",
 			"working_dir": "$project_path",
 			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
@@ -21,7 +21,7 @@
 				"--cov-report=html",
 				"--cov=airstorm"
 			],
-			"name": "Run Tests",
+			"name": "Test with pytest",
 			"selector": "source.python",
 			"working_dir": "$project_path",
 			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
