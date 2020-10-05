@@ -10,23 +10,20 @@ setup(
     license="MIT",
     packages=["airstorm"],
     install_requires=[
-        # Generally accepting all minor version in a major. Making assumption that
-        # people do their due diligence by not releasing breaking changes without
-        # incrementing the major version.
-        "airtable-python-wrapper>=0,<1",
-        "inflection>=0,<1",
+        "airtable-python-wrapper~=0.15.1",
+        "inflection~=0.5.1",
     ],
     extras_require={
         "ci": [
-            "sphinx",
-            "recommonmark",
-            "sphinx-rtd-theme",
-            "sphinx-markdown-tables",
-            "pytest",
-            "pytest-pep8",
-            "pytest-cov",
-            "pytest-html",
-            "flake8",
+            "flake8~=3.8.4",
+            "pytest-cov~=2.10.1"
+            "pytest-html~=2.1.1"
+            "pytest-pep8~=1.0.6"
+            "pytest~=6.1.1"
+            "recommonmark~=0.6.0",
+            "Sphinx~=3.2.1",
+            "sphinx-markdown-tables~=0.0.15",
+            "sphinx-rtd-theme~=0.5.0",
         ],
     },
     include_package_data=True,
