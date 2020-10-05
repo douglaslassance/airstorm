@@ -21,6 +21,7 @@ setup(
             "sphinx",
             "recommonmark",
             "sphinx-rtd-theme",
+            "sphinx-markdown-tables",
             "pytest",
             "pytest-pep8",
             "pytest-cov",
