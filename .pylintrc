@@ -1,0 +1,5 @@
+[MASTER]
+
+ignore=docs, __pycache__
+disable=no-member
+
