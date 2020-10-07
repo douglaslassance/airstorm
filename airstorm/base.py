@@ -1,4 +1,4 @@
-"""Module for base class.
+"""Module holding the base class definition.
 """
 
 import json
@@ -10,12 +10,12 @@ class Base:
     # pylint: disable=R0903
     """The base class is the root object to access the airtable base."""
 
-    def __init__(self, id_, key, schema, renamer=lambda x: x):
+    def __init__(self, id_, api_key, schema, renamer=lambda x: x):
         """Intialize the base object
 
         Args:
             id_ (str): The id of the Airtable base.
-            key (str): The API key of the user that will connect the base.
+            api_key (str): The API key of the user that will connect the base.
 
             schema (str): The JSON filename describing the schema.
 
@@ -68,18 +68,21 @@ class Base:
         """
         object.__init__(self)
         self._id = id_
-        self._key = key
+        self._api_key = api_key
         with open(schema) as fle:
             self._schema = json.loads(fle.read())
             for table_schema in self._schema["tables"]:
                 name = renamer(table_schema["name"])
-                setattr(
-                    self, Model.to_singularized_pascal_case(name), Model(table_schema)
-                )
+                class_name = Model.to_singular_pascal_case(name)
+                class_dict = {
+                    "_schema": table_schema,
+                    "_base": self,
+                }
+                setattr(self, class_name, Model(class_name, (), class_dict))
 
         @property
         def id(self):
-            # pylint: disable=C0103,W0612,W0622
+            # pylint: disable=invalid-name, redefined-builtin, unused-variable
             """The base base_id.
 
             Returns:
@@ -88,14 +91,14 @@ class Base:
             return self._id
 
         @property
-        def key(self):
+        def api_key(self):
             """The API key.
 
             Returns:
                 str: The API key.
             """
-            # pylint: disable=E0102
-            return self._key
+            # pylint: disable=function-redefined
+            return self._api_key
 
         @property
         def schema(self):
@@ -104,5 +107,5 @@ class Base:
             Returns:
                 dict: The schema as a dictionary.
             """
-            # pylint: disable=E0102
+            # pylint: disable=function-redefined
             return self._schema

@@ -1,8 +1,17 @@
+"""Setup for airstorm.
+"""
+
+import os
+import sys
+
 from setuptools import setup
+
+sys.path.append(os.path.dirname(__file__))
+import airstorm  # noqa: E402 pylint: disable=C0413
 
 setup(
     name="airstorm",
-    version="0.1.0",
+    version=airstorm.__version__,
     description="A Python ORM for Airtable.",
     url="https://github.com/playsthetic/airstorm",
     author="Douglas Lassance",

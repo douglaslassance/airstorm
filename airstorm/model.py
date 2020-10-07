@@ -1,57 +1,83 @@
-"""Module for model class.
+"""Module holding the model class.
 """
 
+import logging
 import inflection
 
 from .field import Field
+from .cache import Cache
+
+from airtable import Airtable
 
 
 class Model(type):
     """The model metaclass. Allows to model classes for each existing tables when
     loading the schema."""
 
-    def __new__(cls, schema):
-        name = cls.to_singularized_pascal_case(schema["name"])
-        class_ = super(Model, cls).__new__(cls, name, (), {})
-        class_._schema = schema
-        class_._id = schema["id"]
-        class_._name = schema["name"]
-        class_._primary_field = schema["primaryColumnName"]
+    def __new__(cls, name, bases, dict_):
+        """See type.__new__ documentation."""
+        # pylint: disable=protected-access
 
-        # Creating class properties.
-        cls._add_property(
-            class_,
-            "schema",
-            "_schema",
-            doc="The schema of the table corresponsing to this model.",
-        )
-        cls._add_property(
-            class_,
-            "id",
-            "_id",
-            doc="The id of the table corresponsing to this model.",
-        )
-        cls._add_property(
-            class_,
-            "name",
-            "_name",
-            doc="The name of the table corresponsing to this model.",
-        )
-        cls._add_property(
-            class_,
-            "primary_field",
-            "_primary_field",
-            doc="The primary field name of the table corresponsing to this model.",
-        )
+        def __init__(self, record_id=None):
+            self._record = None
+            if record_id:
+                self._record = self.cache.setdefault(
+                    record_id, self.airtable.get(record_id)
+                )
+                self._hydrate()
 
-        # Creating field properties.
-        # We use the Airtable front facing "field" terminology in this API.
-        for field_schema in schema["columns"]:
-            # Snake casing the field name for the property.
-            property_name = cls.to_snake_case(field_schema["name"])
-            setattr(class_, property_name, Field(field_schema))
+        def exists(self):
+            return bool(self._record)
 
-        return class_
+        def _hydrate(self):
+            if self._record:
+                for attr in dir(self):
+                    field = getattr(self, attr)
+                    if isinstance(field, Field):
+                        if field.id in self._record.fields:
+                            setattr(self, attr, self._record.fields[field.name])
+
+        methods = {
+            "__init__": __init__,
+            "exists": exists,
+            "_hydrate": _hydrate,
+        }
+        dict_.update(methods)
+
+        attributes = {
+            "_table_id": dict_["_schema"]["id"],
+            "_table_name": dict_["_schema"]["name"],
+            "_primary_field": dict_["_schema"]["primaryColumnName"],
+            "_cache": Cache(),
+            "_airtable": Airtable(
+                dict_["_base"]._id,
+                dict_["_schema"]["name"],
+                dict_["_base"]._api_key,
+            ),
+        }
+        dict_.update(attributes)
+
+        model = super(Model, cls).__new__(cls, name, bases, dict_)
+
+        # Add properties.
+        for attr in attributes:
+            cls._add_property(model, attr.strip("_"), attr)
+
+        # Creating field (column) attributes.
+        for field_schema in model._schema["columns"]:
+            # Snake casing the field name for the attribute name..
+            attribute_name = model.to_snake_case(field_schema["name"])
+            # TODO: Find a way around conflits.
+            if hasattr(model, attribute_name):
+                msg = (
+                    "Field {} is skipped. "
+                    "Attribute airstorm.model.Model.{} is reserved."
+                )
+                msg = msg.format(field_schema["name"], attribute_name)
+                logging.warning(msg)
+            setattr(model, attribute_name, Field(model, field_schema))
+
+        return model
 
     @classmethod
     def _add_property(cls, class_, name, attr, doc=None):
@@ -73,7 +99,7 @@ class Model(type):
         )
 
     @staticmethod
-    def to_singularized_pascal_case(name):
+    def to_singular_pascal_case(name):
         """Make any name into a valid singulatized PascalCased name.
 
         Args:
@@ -99,3 +125,34 @@ class Model(type):
             TYPE: The snake_cased name.
         """
         return inflection.parameterize(inflection.titleize(name), separator="_").lower()
+
+
+# class Model(metaclass=ModelType):
+#     def __init__(self, record_id=None):
+#         """Summary
+
+#         Args:
+#             record_id (None, optional): Description
+#         """
+#         self._record_id = record_id
+#         record = self._cache.get(record_id)
+#         if not record:
+#             record = self._airtable.get(id)
+#         if record:
+#             self._hydrate(record)
+#         print("INITIZALIZED")
+
+#     def exists(self):
+#         """Summary
+
+#         Returns:
+#             TYPE: Description
+#         """
+#         return bool(self._record_id in self._cache)
+
+#     def _hydrate(self, record):
+#         """Hydrate the field instance with the cache data."""
+#         for attr in dir(self):
+#             field = getattr(self, attr)
+#             if isinstance(field, Field):
+#                 field = record.fields.get(field.id, field.type())

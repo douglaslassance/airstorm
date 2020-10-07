@@ -1,11 +1,14 @@
 """This module holds test for the database class.
 """
-# pylint: disable=C0116
 
 import os
 
-from airstorm.base import Base
+from airstorm import Base
 from airstorm.model import Model
+from airstorm.field import Field
+
+DIRNAME = os.path.dirname(__file__)
+SCHEMA = os.path.join(DIRNAME, "resources", "schema.json")
 
 
 def test_to_snake_case():
@@ -23,7 +26,7 @@ def test_to_snake_case():
         assert conversion == "foo_bar", '"{}" > "{}"'.format(name, conversion)
 
 
-def test_to_pascal_case():
+def test_to_singular_pascal_case():
     for name in (
         "FooBar",
         "FooBar",
@@ -42,27 +45,28 @@ def test_to_pascal_case():
         "FOO BARS",
         "foo_bars",
     ):
-        conversion = Model.to_singularized_pascal_case(name)
+        conversion = Model.to_singular_pascal_case(name)
         assert conversion == "FooBar", '"{}" > "{}"'.format(name, conversion)
 
 
-def test_creating_models():
-    dirname = os.path.dirname(__file__)
-    base = Base("", "", os.path.join(dirname, "resources", "schema.json"))
-    has_model_attr = False
-    for attr in dir(base):
-        if isinstance(getattr(base, attr), Model):
-            has_model_attr = True
+def test_loaded_tables():
+    base = Base("", "", SCHEMA)
+    loaded_tables = False
+    for model in dir(base):
+        model = getattr(base, model)
+        if isinstance(model, Model):
+            for field in dir(model):
+                field = getattr(model, field)
+                if isinstance(field, Field):
+                    loaded_tables = True
+                    break
+        if loaded_tables:
             break
-    assert has_model_attr, "Was not able to create model types."
+    assert loaded_tables, "Was not able to load tables."
 
 
-def test_creating_fields():
-    dirname = os.path.dirname(__file__)
-    base = Base("", "", os.path.join(dirname, "resources", "schema.json"))
-    has_model_attr = False
-    for attr in dir(base):
-        if isinstance(getattr(base, attr), Model):
-            has_model_attr = True
-            break
-    assert has_model_attr, "Was not able to create model types."
+def test_dynamic_attributes():
+    base = Base("", "", SCHEMA)
+    assert base.Context.table_id == "tblCko8U7PjPYPNpf", "Cannot get model table ID."
+    assert base.Asset.table_id != "tbl00YIV1HyHLE56A", "Models are sharing table IDs."
+    assert base.Context.name.id == "fld5tR1r0jBCqjG06", "Getting field ID failed."
