@@ -24,15 +24,17 @@ setup(
     ],
     extras_require={
         "ci": [
-            "flake8~=3.8.4",
+            "flake8~=3.8",
+            "flake8-print~=3.1",
+            "pep8-naming~=0.11",
             "pytest-cov~=2.10.1"
             "pytest-html~=2.1.1"
             "pytest-pep8~=1.0.6"
             "pytest~=6.1.1"
-            "recommonmark~=0.6.0",
-            "Sphinx~=3.2.1",
-            "sphinx-markdown-tables~=0.0.15",
-            "sphinx-rtd-theme~=0.5.0",
+            "recommonmark~=0.6",
+            "Sphinx~=3.2",
+            "sphinx-markdown-tables~=0.0",
+            "sphinx-rtd-theme~=0.5",
         ],
     },
     include_package_data=True,

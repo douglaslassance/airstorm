@@ -1,111 +1,60 @@
 """Module holding the base class definition.
 """
 
-import json
-
 from .model import Model
+from .functions import to_singular_pascal_case
 
 
 class Base:
     # pylint: disable=R0903
     """The base class is the root object to access the airtable base."""
 
-    def __init__(self, id_, api_key, schema, renamer=lambda x: x):
+    def __init__(
+        self,
+        base_id: str,
+        api_key: str,
+        schema: dict,
+        to_model_name=to_singular_pascal_case,
+        indexed_tables=None,
+    ):
         """Intialize the base object
 
         Args:
-            id_ (str): The id of the Airtable base.
+            base_id (str): The id of the Airtable base.
             api_key (str): The API key of the user that will connect the base.
 
-            schema (str): The JSON filename describing the schema.
+            schema (str): A dictionary representing the schema.
 
-                To generate it, go to https://airtable.com/api and select a base. Then
-                open your browsers console (Ctrl+Alt+I) and run the following:
+                Use the following Gist to generate to generate the schema manually:
+                https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a521ba07d751244
 
-                ```javascript
-                var myapp = {
-                    id:window.application.id,
-                    name:window.application.name,
-                    tables:[]
-                };
+            to_model_name (callable, optional): Transform table into model class names.
 
-                for (let table of window.application.tables){
+                By default it will PascalCase and singularize the name of the tables,
+                but this argurment provide users with potentially desired flexibility.
 
-                    var mytable = {
-                            id:table.id,
-                            isEmpty:table.isEmpty,
-                            name:table.name,
-                            nameForUrl:table.nameForUrl,
-                            primaryColumnName:table.primaryColumnName,
-                            fields:[]
-                    };
+            indexed_tables (list, collections.abc.Iterable):
+                List of table names to index immediatly.
 
-                    for (let field of table.fields){
-                        var myfield = {
-                            id:field.id,
-                            name:field.name,
-                            type:field.type,
-                            typeOptions:field.typeOptions
-                        };
-
-                        mytable.fields.push(myfield);
-
-                    }
-
-                    myapp.tables.push(mytable);
-
-                }
-
-                jQuery('link[rel=stylesheet]').remove();
-                jQuery("body").html(JSON.stringify(myapp));
-                console.log(myapp);
-                ```
-
-            renamer (TYPE, optional): Callable to transform table into class names.
-
-                For instance, people may wanst to singularize the table names using the
-                inflection package.
+                This basically caches the entire table locally in a single request. It
+                will make the base initialization a bit slower but in turn you won't
+                ever need to hit the airtable for any record of this table. This is a
+                fit optimization for tables with little records and that do not change
+                often.
         """
         object.__init__(self)
-        self._id = id_
+
+        self._id = base_id
         self._api_key = api_key
-        with open(schema) as fle:
-            self._schema = json.loads(fle.read())
-            for table_schema in self._schema["tables"]:
-                name = renamer(table_schema["name"])
-                class_name = Model.to_singular_pascal_case(name)
-                class_dict = {
-                    "_schema": table_schema,
-                    "_base": self,
-                }
-                setattr(self, class_name, Model(class_name, (), class_dict))
+        self._schema = schema
+        self._model_by_id = {}
 
-        @property
-        def id(self):
-            # pylint: disable=invalid-name, redefined-builtin, unused-variable
-            """The base base_id.
-
-            Returns:
-                str: The base base_id.
-            """
-            return self._id
-
-        @property
-        def api_key(self):
-            """The API key.
-
-            Returns:
-                str: The API key.
-            """
-            # pylint: disable=function-redefined
-            return self._api_key
-
-        @property
-        def schema(self):
-            """The shema dictionary.
-
-            Returns:
-                dict: The schema as a dictionary.
-            """
-            # pylint: disable=function-redefined
-            return self._schema
+        for table_schema in self._schema["tables"]:
+            table_name = table_schema["name"]
+            model_name = to_model_name(table_schema["name"])
+            model_dict = {
+                "_schema": table_schema,
+                "_base": self,
+                "_indexed": table_name in (indexed_tables or []),
+            }
+            setattr(self, model_name, Model(model_name, (), model_dict))

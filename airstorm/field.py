@@ -3,11 +3,11 @@
 
 
 class Field:
-    """Airtable table field."""
+    """Airtable field."""
 
     _read_only_field_types = ("formula", "computation")
 
-    def __new__(cls, model, schema):
+    def __new__(cls, model, schema: dict):
         # pylint: disable=unused-argument
         """Summary
 
@@ -28,48 +28,29 @@ class Field:
         self._name = schema["name"]
         self._value = 5
         self._model = model
+        self.__doc__ = schema.get("description", "{} field.".format(schema["name"]))
 
     def __get__(self, instance, owner):
         if instance is None:
             return self
-        return self._value
+        value = (
+            instance._cache.get(instance._record_id, {})
+            .get("fields", {})
+            .get(self._name)
+        )
+        if self._schema["type"] != "foreignKey":
+            return value
 
-    @property
-    def model(self):
-        """The model this field belong to.
-
-        Returns:
-            airstorm.model.Model: The model this field belong to.
-        """
-        return self._model
-
-    @property
-    def schema(self):
-        """The field schema.
-
-        Returns:
-            dict: The field schema.
-        """
-        return self._schema
-
-    @property
-    def name(self):
-        """The Airtable field name.
-
-        Returns:
-            str: The Airtable field name.
-        """
-        return self._name
-
-    @property
-    def id(self):
-        # pylint: disable=invalid-name
-        """The Airtable field id.
-
-        Returns:
-            str: The Airtable field id.
-        """
-        return self._id
+        # If the field is of type foreign key we won't return the raw value.
+        table_id = self._schema["typeOptions"]["foreignTableId"]
+        model = instance._base._model_by_id[table_id]
+        records = []
+        value = value or []
+        for id_ in value:
+            records.append(model(id_))
+        if self._schema["typeOptions"]["relationship"] == "one":
+            return records[0] if records else model()
+        return records
 
 
 class EditableField(Field):
@@ -78,10 +59,16 @@ class EditableField(Field):
     TODO: Implement __delete__ as a way to drop local changes.
     """
 
-    def __new__(cls, model, schema):
+    def __new__(cls, model, schema: dict):
         if schema["type"] in cls._read_only_field_types:
             raise Exception("{} is a read only field.".format(schema["name"]))
         return super(cls, Field).__new__(schema)
 
     def __set__(self, instance, value):
         self._value = value
+
+    def __delete__(self, instance):
+        """Reset the local change for this field."""
+        if instance is None:
+            pass
+        instance._value = None

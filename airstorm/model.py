@@ -2,12 +2,10 @@
 """
 
 import logging
-import inflection
 
-from .field import Field
 from .cache import Cache
-
-from airtable import Airtable
+from .field import Field
+from .functions import to_snake_case
 
 
 class Model(type):
@@ -18,69 +16,68 @@ class Model(type):
         """See type.__new__ documentation."""
         # pylint: disable=protected-access
 
-        def __init__(self, record_id=None):
-            self._record = None
-            if record_id:
-                self._record = self.cache.setdefault(
-                    record_id, self.airtable.get(record_id)
-                )
-                self._hydrate()
+        def __init__(self, record_id=""):  # noqa: N807
+            record = self._cache.get(record_id)
+            self._record_id = record_id if record else ""
 
-        def exists(self):
-            return bool(self._record)
+        def __str__(self):  # noqa: N807
+            return '<{}("{}") {}>'.format(
+                type(self).__name__,
+                self._record_id,
+                str(getattr(self, to_snake_case(self._primary_field))),
+            )
 
-        def _hydrate(self):
-            if self._record:
-                for attr in dir(self):
-                    field = getattr(self, attr)
-                    if isinstance(field, Field):
-                        if field.id in self._record.fields:
-                            setattr(self, attr, self._record.fields[field.name])
+        def __bool__(self):  # noqa: N807
+            return bool(self._record_id)
+
+        def __eq__(self, other):  # noqa: N807
+            if isinstance(other, type(self)):
+                return self._record_id == other._record_id
+            return False
 
         methods = {
             "__init__": __init__,
-            "exists": exists,
-            "_hydrate": _hydrate,
+            "__str__": __str__,
+            "__bool__": __bool__,
+            "__eq__": __eq__,
         }
         dict_.update(methods)
 
         attributes = {
-            "_table_id": dict_["_schema"]["id"],
-            "_table_name": dict_["_schema"]["name"],
+            "_id": dict_["_schema"]["id"],
+            "_name": dict_["_schema"]["name"],
             "_primary_field": dict_["_schema"]["primaryColumnName"],
-            "_cache": Cache(),
-            "_airtable": Airtable(
-                dict_["_base"]._id,
-                dict_["_schema"]["name"],
-                dict_["_base"]._api_key,
+            "__doc__": dict_["_schema"].get(
+                "description", "{} model.".format(dict_["_schema"]["name"])
             ),
         }
         dict_.update(attributes)
 
         model = super(Model, cls).__new__(cls, name, bases, dict_)
+        model._base._model_by_id[dict_["_schema"]["id"]] = model
 
-        # Add properties.
-        for attr in attributes:
-            cls._add_property(model, attr.strip("_"), attr)
+        logging.info(" ".join([name, model._base._id, model._base._api_key, model._id]))
+        model._cache = Cache(
+            model._base._id, model._base._api_key, model._id, index=dict_["_indexed"]
+        )
 
         # Creating field (column) attributes.
         for field_schema in model._schema["columns"]:
             # Snake casing the field name for the attribute name..
-            attribute_name = model.to_snake_case(field_schema["name"])
-            # TODO: Find a way around conflits.
+            attribute_name = to_snake_case(field_schema["name"])
+            # Informing of any field name conflicts. Technically Airtable allows to have
+            # multiple column with the same name, but our API cannot support it for
+            # obvious reason. As the result first arrived, first served.
             if hasattr(model, attribute_name):
-                msg = (
-                    "Field {} is skipped. "
-                    "Attribute airstorm.model.Model.{} is reserved."
-                )
-                msg = msg.format(field_schema["name"], attribute_name)
+                msg = 'Attribute "{}" on {} is already reserved.'
+                msg = msg.format(attribute_name, model)
                 logging.warning(msg)
             setattr(model, attribute_name, Field(model, field_schema))
 
         return model
 
     @classmethod
-    def _add_property(cls, class_, name, attr, doc=None):
+    def _add_property(cls, class_: object, name: str, attr: str, doc=""):
         """Adds a property to a class.
 
         Args:
@@ -97,62 +94,3 @@ class Model(type):
                 doc=doc,
             ),
         )
-
-    @staticmethod
-    def to_singular_pascal_case(name):
-        """Make any name into a valid singulatized PascalCased name.
-
-        Args:
-            name (TYPE): The name to singularized PascalCase.
-
-        Returns:
-            str: The singularized PascalCased name.
-        """
-        return inflection.singularize(
-            inflection.camelize(
-                inflection.parameterize(inflection.titleize(name), separator="_")
-            )
-        )
-
-    @staticmethod
-    def to_snake_case(name):
-        """Make any name into a valid snake_cased name.
-
-        Args:
-            name (str): The name to snake_case.
-
-        Returns:
-            TYPE: The snake_cased name.
-        """
-        return inflection.parameterize(inflection.titleize(name), separator="_").lower()
-
-
-# class Model(metaclass=ModelType):
-#     def __init__(self, record_id=None):
-#         """Summary
-
-#         Args:
-#             record_id (None, optional): Description
-#         """
-#         self._record_id = record_id
-#         record = self._cache.get(record_id)
-#         if not record:
-#             record = self._airtable.get(id)
-#         if record:
-#             self._hydrate(record)
-#         print("INITIZALIZED")
-
-#     def exists(self):
-#         """Summary
-
-#         Returns:
-#             TYPE: Description
-#         """
-#         return bool(self._record_id in self._cache)
-
-#     def _hydrate(self, record):
-#         """Hydrate the field instance with the cache data."""
-#         for attr in dir(self):
-#             field = getattr(self, attr)
-#             if isinstance(field, Field):
-#                 field = record.fields.get(field.id, field.type())

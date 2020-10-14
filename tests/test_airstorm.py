@@ -1,14 +1,17 @@
 """This module holds test for the database class.
 """
+# pylint: disable=protected-access, missing-function-docstring
 
 import os
+import json
 
 from airstorm import Base
 from airstorm.model import Model
 from airstorm.field import Field
+from airstorm.functions import to_snake_case, to_singular_pascal_case
 
-DIRNAME = os.path.dirname(__file__)
-SCHEMA = os.path.join(DIRNAME, "resources", "schema.json")
+with open(os.path.join(os.path.dirname(__file__), "resources", "schema.json")) as fle:
+    SCHEMA = json.loads(fle.read())
 
 
 def test_to_snake_case():
@@ -22,7 +25,7 @@ def test_to_snake_case():
         "FOO BAR",
         "foo_bar",
     ):
-        conversion = Model.to_snake_case(name)
+        conversion = to_snake_case(name)
         assert conversion == "foo_bar", '"{}" > "{}"'.format(name, conversion)
 
 
@@ -45,7 +48,7 @@ def test_to_singular_pascal_case():
         "FOO BARS",
         "foo_bars",
     ):
-        conversion = Model.to_singular_pascal_case(name)
+        conversion = to_singular_pascal_case(name)
         assert conversion == "FooBar", '"{}" > "{}"'.format(name, conversion)
 
 
@@ -67,6 +70,6 @@ def test_loaded_tables():
 
 def test_dynamic_attributes():
     base = Base("", "", SCHEMA)
-    assert base.Context.table_id == "tblCko8U7PjPYPNpf", "Cannot get model table ID."
-    assert base.Asset.table_id != "tbl00YIV1HyHLE56A", "Models are sharing table IDs."
-    assert base.Context.name.id == "fld5tR1r0jBCqjG06", "Getting field ID failed."
+    assert base.Context._id == "tblCko8U7PjPYPNpf", "Cannot get model table ID."
+    assert base.Asset._id != "tbl00YIV1HyHLE56A", "Models are sharing table IDs."
+    assert base.Context.name._id == "fld5tR1r0jBCqjG06", "Getting field ID failed."

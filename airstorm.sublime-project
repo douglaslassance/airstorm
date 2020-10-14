@@ -25,6 +25,18 @@
 			"selector": "source.python",
 			"working_dir": "$project_path",
 			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
+		},
+		{
+			"cmd":
+			[
+				"sphinx-build",
+				"./docs/source",
+				"./docs/build"
+			],
+			"name": "Document with Sphinx",
+			"selector": "source.python",
+			"working_dir": "$project_path",
+			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
 		}
 	],
 	"folders":
