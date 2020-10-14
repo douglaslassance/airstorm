@@ -20,7 +20,6 @@ class Cache(dict):
         dict.__init__(self)
         self._airtable = Airtable(base_id, table_id, api_key)
         if index:
-            print("INDEXING")
             records = self._airtable.get_all()
             for record in records:
                 self[record["id"]] = record

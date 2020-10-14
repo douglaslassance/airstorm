@@ -1,8 +1,10 @@
-.. mdinclude:: ../../README.md
+Content
+=======
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 4
+
+   generated/airstorm
 
 Indices and tables
 ==================

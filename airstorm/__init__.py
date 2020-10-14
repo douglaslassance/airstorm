@@ -1,9 +1,14 @@
-"""The airstorm module contains general information about the package and access to the
+"""This module contains general information about the package and exposes the Airtable
 Base class.
 """
-from .base import Base
 
+__author__ = "Douglas Lassance"
+__license__ = "MIT"
+__copyright__ = "2020, Douglas Lassance"
 __version__ = "0.1.0"
+__email__ = "douglassance@gmail.com"
+
+from .base import Base
 
 __all__ = ["Base"]
 

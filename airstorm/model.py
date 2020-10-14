@@ -4,13 +4,13 @@
 import logging
 
 from .cache import Cache
-from .field import Field
+from .fields import Field
 from .functions import to_snake_case
 
 
 class Model(type):
-    """The model metaclass. Allows to model classes for each existing tables when
-    loading the schema."""
+    """The model metaclass allows to generate model classes for each existing tables
+    when loading the schema."""
 
     def __new__(cls, name, bases, dict_):
         """See type.__new__ documentation."""

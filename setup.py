@@ -6,17 +6,23 @@ import sys
 
 from setuptools import setup
 
-sys.path.append(os.path.dirname(__file__))
+dirname = os.path.dirname(__file__)
+sys.path.append(dirname)
 import airstorm  # noqa: E402 pylint: disable=C0413
 
+# Get the long description from the README file.
+with open(os.path.join(dirname, "README.md")) as fle:
+    long_description = fle.read()
+
 setup(
-    name="airstorm",
+    name=airstorm.__name__,
     version=airstorm.__version__,
-    description="A Python ORM for Airtable.",
+    description=airstorm.__doc__,
+    long_description=long_description,
     url="https://github.com/playsthetic/airstorm",
-    author="Douglas Lassance",
-    author_email="douglassance@gmail.com",
-    license="MIT",
+    author=airstorm.__author__,
+    author_email=airstorm.__email__,
+    license=airstorm.__license__,
     packages=["airstorm"],
     install_requires=[
         "airtable-python-wrapper~=0.15.1",
@@ -34,7 +40,10 @@ setup(
             "recommonmark~=0.6",
             "Sphinx~=3.2",
             "sphinx-markdown-tables~=0.0",
+            "sphinxcontrib-apidoc~=0.3",
             "sphinx-rtd-theme~=0.5",
+            "pypandoc~=1.5",
+            "pandoc~=1.0",
         ],
     },
     include_package_data=True,

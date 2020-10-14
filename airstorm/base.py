@@ -17,14 +17,13 @@ class Base:
         to_model_name=to_singular_pascal_case,
         indexed_tables=None,
     ):
-        """Intialize the base object
+        """Initialize the Base class.
 
         Args:
             base_id (str): The id of the Airtable base.
             api_key (str): The API key of the user that will connect the base.
 
             schema (str): A dictionary representing the schema.
-
                 Use the following Gist to generate to generate the schema manually:
                 https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a521ba07d751244
 
@@ -33,8 +32,8 @@ class Base:
                 By default it will PascalCase and singularize the name of the tables,
                 but this argurment provide users with potentially desired flexibility.
 
-            indexed_tables (list, collections.abc.Iterable):
-                List of table names to index immediatly.
+            indexed_tables (list, collections.abc.Iterable): List of table names to
+                index immediatly.
 
                 This basically caches the entire table locally in a single request. It
                 will make the base initialization a bit slower but in turn you won't

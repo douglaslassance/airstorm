@@ -1,17 +1,17 @@
-"""This module hosts a handfull fo re-usable functions.
+"""This module holds general purpose functions.
 """
 
 import inflection
 
 
 def to_singular_pascal_case(name: str):
-    """Make any name into a valid singulatized PascalCased name.
+    """Make any string into a singular "PascalCased" string.
 
     Args:
-        name (TYPE): The name to singularized PascalCase.
+        name (TYPE): The string to convert.
 
     Returns:
-        str: The singularized PascalCased name.
+        str: The converted string.
     """
     return inflection.singularize(
         inflection.camelize(
@@ -21,12 +21,12 @@ def to_singular_pascal_case(name: str):
 
 
 def to_snake_case(name: str):
-    """Make any name into a valid snake_cased name.
+    """Make any string into a "snake_cased" string.
 
     Args:
-        name (str): The name to snake_case.
+        name (str): The name to convert.
 
     Returns:
-        TYPE: The snake_cased name.
+        TYPE: The converted string.
     """
     return inflection.parameterize(inflection.titleize(name), separator="_").lower()

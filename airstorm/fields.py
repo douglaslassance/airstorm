@@ -1,9 +1,12 @@
-"""Module holding the field class.
+"""Module holding the field classes.
 """
 
 
 class Field:
-    """Airtable field."""
+    """This class implements the interface of a property so each field of the model can
+    be accessed easily. Each Airtable field for a given table will be mapped to one of
+    those by snake_casing the name.
+    """
 
     _read_only_field_types = ("formula", "computation")
 
@@ -54,10 +57,8 @@ class Field:
 
 
 class EditableField(Field):
-    """Field that can be edited.
-
-    TODO: Implement __delete__ as a way to drop local changes.
-    """
+    """Field that can be edited. Using the del keyword on this object will reset any
+    local change to it's original value."""
 
     def __new__(cls, model, schema: dict):
         if schema["type"] in cls._read_only_field_types:
