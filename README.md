@@ -21,7 +21,7 @@ pip install airstorm
 
 ```python
 from airstorm.base import Base
-base = Base('your_base_id', 'your_api_key', {'your_schema': ''})
+base = Base('your_base_id', 'your_api_key', {'your': 'schema'})
 fruit_juice = base.FruitJuice('some_fruit_juice_id')  # Accessing the model for the "Fruit Juices" table.
 price_tag = fruit_juice.price_tag  # Accessing the "Price Tag" field value.
 for fruit in fruit_juice.fruits:  # Accessing a linked record in a breeze.
@@ -31,7 +31,9 @@ for fruit in fruit_juice.fruits:  # Accessing a linked record in a breeze.
 ## Getting the Schema
 
 Unfortunatly currently this part of the process is not ideal.
-Because Airtable does not provide access to the schema via their API
+Because Airtable does not provide access to the schema via their API you'll have to "download" the schema manually via a web browser of choice.
+
+The following [gist](https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a521ba07d751244) is a script that you can run on a Chrome console from the Airtable base [API page](https://airtable.com/api) to get back the JSON schema that airtstorm is expecting to be fed with.
 
 ## Roadmap
 
