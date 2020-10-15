@@ -1,0 +1,61 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"pip",
+				"install",
+				"--editable",
+				".[ci]",
+			],
+			"name": "Install requirements",
+			"selector": "source.python",
+			"working_dir": "$project_path",
+			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
+		},
+		{
+			"cmd":
+			[
+				"pytest",
+				"--cov-report=html",
+				"--cov=airstorm"
+			],
+			"name": "Test with pytest",
+			"selector": "source.python",
+			"working_dir": "$project_path",
+			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
+		},
+		{
+			"cmd":
+			[
+				"sphinx-build",
+				"./docs/source",
+				"./docs/build"
+			],
+			"name": "Document with Sphinx",
+			"selector": "source.python",
+			"working_dir": "$project_path",
+			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				".coverage"
+			],
+			"folder_exclude_patterns":
+			[
+				"__pycache__",
+				"htmlcov",
+				"*.egg-info",
+				".pytest_cache",
+				"build"
+			],
+			"path": "."
+		}
+	],
+	"virtualenv": "~/.virtualenvs/airstorm"
+}
