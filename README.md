@@ -31,7 +31,7 @@ for fruit in fruit_juice.fruits:  # Accessing a linked record in a breeze.
 ## Getting the Schema
 
 Unfortunatly currently this part of the process is not ideal.
-Because Airtable does not provide access to the schema via their API you'll have to "download" the schema manually via a web browser of choice.
+Because Airtable does not provide access to the schema via their API, you'll have to "download" the schema manually via a web browser of choice.
 
 The following [gist](https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a521ba07d751244) is a script that you can run on a Chrome console from the Airtable base [API page](https://airtable.com/api) to get back the JSON schema that airtstorm is expecting to be fed with.
 
