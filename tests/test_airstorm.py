@@ -5,9 +5,9 @@
 import os
 import json
 
-from airstorm import Base
+from airstorm.base import Base
 from airstorm.model import Model
-from airstorm.field import Field
+from airstorm.fields import Field
 from airstorm.functions import to_snake_case, to_singular_pascal_case
 
 with open(os.path.join(os.path.dirname(__file__), "resources", "schema.json")) as fle:
