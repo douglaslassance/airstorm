@@ -1,6 +1,6 @@
 # airstorm
 
-[![Documentation Status](https://readthedocs.org/projects/airstorm/badge/?version=latest)](https://airstorm.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/airstorm/badge/?version=latest)](https://airstorm.readthedocs.io/en/latest)
 
 Airstorm is a dynamic Python ORM for [Airtable](https://airtable.com). It allows you to easily interact with any base using Python with minimal setup.
 
