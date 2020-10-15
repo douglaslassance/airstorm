@@ -7,7 +7,7 @@ Airstorm is a dynamic Python ORM for [Airtable](https://airtable.com). It allows
 ## Main Features
 
 * Object-oriented interface.
-* Dynamic loading of data models.
+* Dynamic generation of data models from schema.
 * Automatic foreign-key resolution.
 * Caching layer to avoid abusing the Airtable API.
 
@@ -31,7 +31,12 @@ for fruit in fruit_juice.fruits:  # Accessing a linked record in a breeze.
 ## Getting the Schema
 
 Unfortunatly currently this part of the process is not ideal.
+Because Airtable does not provide access to the schema via their API
 
 ## Roadmap
 
-* Dynamic schema loading when Airtable finally upgrade their API.
+* Downlading schema automatically using pyppeteer.
+* Field validation where possible.
+* Auto-generated model lists.
+* Push changes. Currently we are read-only.
+* Advance queries. Lot to think about here.
