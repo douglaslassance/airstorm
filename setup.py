@@ -37,13 +37,10 @@ setup(
             "pytest-html~=2.1.1"
             "pytest-pep8~=1.0.6"
             "pytest~=6.1.1"
-            "recommonmark~=0.6",
             "Sphinx~=3.2",
             "sphinx-markdown-tables~=0.0",
             "sphinxcontrib-apidoc~=0.3",
             "sphinx-rtd-theme~=0.5",
-            "pypandoc~=1.5",
-            "pandoc~=1.0",
         ],
     },
     include_package_data=True,
