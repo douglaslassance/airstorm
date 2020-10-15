@@ -8,7 +8,7 @@ def to_singular_pascal_case(name: str):
     """Make any string into a singular "PascalCased" string.
 
     Args:
-        name (TYPE): The string to convert.
+        name (str): The string to convert.
 
     Returns:
         str: The converted string.
@@ -27,6 +27,6 @@ def to_snake_case(name: str):
         name (str): The name to convert.
 
     Returns:
-        TYPE: The converted string.
+        str: The converted string.
     """
     return inflection.parameterize(inflection.titleize(name), separator="_").lower()

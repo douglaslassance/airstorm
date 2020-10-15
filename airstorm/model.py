@@ -13,7 +13,6 @@ class Model(type):
     when loading the schema."""
 
     def __new__(cls, name, bases, dict_):
-        """See type.__new__ documentation."""
         # pylint: disable=protected-access
 
         def __init__(self, record_id=""):  # noqa: N807

@@ -6,8 +6,33 @@ from .functions import to_singular_pascal_case
 
 
 class Base:
-    # pylint: disable=R0903
-    """The base class is the root object to access the airtable base."""
+    """The base class is the root object to access the airtable bases.
+
+    During initialization the instance will be filled with attribute point to the
+    different models available in the database.
+
+    Args:
+        base_id (str): The id of the Airtable base.
+        api_key (str): The API key of the user that will connect the base.
+
+        schema (str): A dictionary representing the schema.
+            Use the following Gist to generate to generate the schema manually:
+            https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a521ba07d751244
+
+        to_model_name (callable, optional): Transform table into model class names.
+
+            By default it will PascalCase and singularize the name of the tables,
+            but this argurment provide users with potentially desired flexibility.
+
+        indexed_tables (list, collections.abc.Iterable): List of table names to
+            index immediatly.
+
+            This basically caches the entire table locally in a single request. It
+            will make the base initialization a bit slower but in turn you won't
+            ever need to hit the airtable for any record of this table. This is a
+            fit optimization for tables with little records and that do not change
+            often.
+    """
 
     def __init__(
         self,
@@ -17,30 +42,6 @@ class Base:
         to_model_name=to_singular_pascal_case,
         indexed_tables=None,
     ):
-        """Initialize the Base class.
-
-        Args:
-            base_id (str): The id of the Airtable base.
-            api_key (str): The API key of the user that will connect the base.
-
-            schema (str): A dictionary representing the schema.
-                Use the following Gist to generate to generate the schema manually:
-                https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a521ba07d751244
-
-            to_model_name (callable, optional): Transform table into model class names.
-
-                By default it will PascalCase and singularize the name of the tables,
-                but this argurment provide users with potentially desired flexibility.
-
-            indexed_tables (list, collections.abc.Iterable): List of table names to
-                index immediatly.
-
-                This basically caches the entire table locally in a single request. It
-                will make the base initialization a bit slower but in turn you won't
-                ever need to hit the airtable for any record of this table. This is a
-                fit optimization for tables with little records and that do not change
-                often.
-        """
         object.__init__(self)
 
         self._id = base_id

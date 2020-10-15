@@ -68,6 +68,7 @@ source_suffix = [".rst", ".md"]
 #     ".md": "recommonmark.parser.CommonMarkParser",
 # }
 
+add_module_names = False
 
 # -- Options for HTML output -------------------------------------------------
 

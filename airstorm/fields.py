@@ -3,24 +3,21 @@
 
 
 class Field:
-    """This class implements the interface of a property so each field of the model can
-    be accessed easily. Each Airtable field for a given table will be mapped to one of
-    those by snake_casing the name.
+    """This property like object will map against a table field exposed as a snake_cased
+    attribute on the model.
+
+    Args:
+        model (airstorm.model.Model): The model this field belongs to.
+        schema (dict): The schema for this field.
+
+    Returns:
+        airstorm.fields.Field: The initatiazed field object.
     """
 
     _read_only_field_types = ("formula", "computation")
 
     def __new__(cls, model, schema: dict):
         # pylint: disable=unused-argument
-        """Summary
-
-        Args:
-            model (airstorm.model.Model): The model this field belongs to.
-            schema (dict): The schema for this field.
-
-        Returns:
-            TYPE: Description
-        """
         if schema["type"] in cls._read_only_field_types:
             return object.__new__(cls)
         return object.__new__(EditableField)
@@ -57,8 +54,7 @@ class Field:
 
 
 class EditableField(Field):
-    """Field that can be edited. Using the del keyword on this object will reset any
-    local change to it's original value."""
+    """Field that can be edited."""
 
     def __new__(cls, model, schema: dict):
         if schema["type"] in cls._read_only_field_types:
@@ -66,6 +62,9 @@ class EditableField(Field):
         return super(cls, Field).__new__(schema)
 
     def __set__(self, instance, value):
+        """Sets the value of the field.
+        The value is "local" until the changes are pushed.
+        """
         self._value = value
 
     def __delete__(self, instance):
