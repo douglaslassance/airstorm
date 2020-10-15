@@ -25,18 +25,18 @@ setup(
     license=airstorm.__license__,
     packages=["airstorm"],
     install_requires=[
-        "airtable-python-wrapper~=0.15.1",
-        "inflection~=0.5.1",
+        "airtable-python-wrapper~=0.15",
+        "inflection~=0.5",
     ],
     extras_require={
         "ci": [
             "flake8~=3.8",
             "flake8-print~=3.1",
             "pep8-naming~=0.11",
-            "pytest-cov~=2.10.1"
-            "pytest-html~=2.1.1"
-            "pytest-pep8~=1.0.6"
-            "pytest~=6.1.1"
+            "pytest-cov~=2.10.1",
+            "pytest-html~=2.1.1",
+            "pytest-pep8~=1.0.6",
+            "pytest~=6.1.1",
             "Sphinx~=3.2",
             "sphinx-markdown-tables~=0.0",
             "sphinxcontrib-apidoc~=0.3",
