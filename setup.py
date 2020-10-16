@@ -17,7 +17,7 @@ with open(os.path.join(dirname, "README.md")) as fle:
 setup(
     name=airstorm.__name__,
     version=airstorm.__version__,
-    description=airstorm.__doc__,
+    description="A Python ORM for Airtable.",
     long_description=long_description,
     url="https://github.com/playsthetic/airstorm",
     author=airstorm.__author__,
