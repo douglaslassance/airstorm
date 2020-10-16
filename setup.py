@@ -11,7 +11,7 @@ sys.path.append(dirname)
 import airstorm  # noqa: E402 pylint: disable=C0413
 
 # Get the long description from the README file.
-with open(os.path.join(dirname, "README.md")) as fle:
+with open(os.path.join(dirname, "README.md"), encoding='utf-8') as fle:
     long_description = fle.read()
 
 setup(
