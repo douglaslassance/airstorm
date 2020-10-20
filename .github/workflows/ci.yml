@@ -1,4 +1,4 @@
-name: integration
+name: ci
 
 on:
   push:
