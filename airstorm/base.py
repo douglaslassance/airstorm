@@ -1,7 +1,5 @@
-"""Module holding the base class definition.
-"""
-
 from .model import Model
+from .model_list import ModelList
 from .functions import to_singular_pascal_case
 
 
@@ -48,6 +46,7 @@ class Base:
         self._api_key = api_key
         self._schema = schema
         self._model_by_id = {}
+        self._model_list_by_id = {}
 
         for table_schema in self._schema["tables"]:
             table_name = table_schema["name"]
@@ -57,4 +56,12 @@ class Base:
                 "_base": self,
                 "_indexed": table_name in (indexed_tables or []),
             }
-            setattr(self, model_name, Model(model_name, (), model_dict))
+            model = Model(model_name, (), model_dict)
+            setattr(self, model_name, model)
+            model_list_name = model_name + "List"
+            model_list_dict = {"_model": model}
+            setattr(
+                self,
+                model_list_name,
+                ModelList(model_list_name, (list,), model_list_dict),
+            )

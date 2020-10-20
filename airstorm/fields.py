@@ -1,7 +1,3 @@
-"""Module holding the field classes.
-"""
-
-
 class Field:
     """This property like object will map against a table field exposed as a snake_cased
     attribute on the model.
@@ -23,6 +19,7 @@ class Field:
         return object.__new__(EditableField)
 
     def __init__(self, model, schema):
+        object.__init__(self)
         self._schema = schema
         self._id = schema["id"]
         self._name = schema["name"]
@@ -50,7 +47,8 @@ class Field:
             records.append(model(id_))
         if self._schema["typeOptions"]["relationship"] == "one":
             return records[0] if records else model()
-        return records
+        model_list = self._model._base._model_list_by_id[model._id]
+        return model_list(records)
 
 
 class EditableField(Field):
@@ -69,6 +67,4 @@ class EditableField(Field):
 
     def __delete__(self, instance):
         """Reset the local change for this field."""
-        if instance is None:
-            pass
         instance._value = None

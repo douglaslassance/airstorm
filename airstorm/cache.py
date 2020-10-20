@@ -1,5 +1,3 @@
-"""This module define the Cache class.
-"""
 import logging
 
 from airtable import Airtable

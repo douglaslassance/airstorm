@@ -1,0 +1,48 @@
+{
+  "Smoothy": {
+    "recxrTqISZmVBvDMs": {
+      "id": "recxrTqISZmVBvDMs",
+      "fields": {
+        "Fruits": [
+          "recLSJFOqk6hYiWKg",
+          "recyEwR4TBE89mNsb"
+        ],
+        "Price": 10,
+        "Name": "Iron Man",
+        "ID": "recxrTqISZmVBvDMs"
+      },
+      "createdTime": "2020-10-19T15:31:22.000Z"
+    }
+  },
+  "Fruit": {
+    "recLSJFOqk6hYiWKg": {
+      "id": "recLSJFOqk6hYiWKg",
+      "fields": {
+        "Name": "Apple",
+        "Smoothies": [
+          "recxrTqISZmVBvDMs",
+          "reckgLhuI7SpL6jwK"
+        ],
+        "Seasons": [
+          "Winter"
+        ],
+        "ID": "recLSJFOqk6hYiWKg"
+      },
+      "createdTime": "2020-10-19T15:31:38.000Z"
+    },
+    "recyEwR4TBE89mNsb": {
+      "id": "recyEwR4TBE89mNsb",
+      "fields": {
+        "Name": "Mango",
+        "Smoothies": [
+          "recxrTqISZmVBvDMs"
+        ],
+        "Seasons": [
+          "Summer"
+        ],
+        "ID": "recyEwR4TBE89mNsb"
+      },
+      "createdTime": "2020-10-19T15:31:38.000Z"
+    }
+  }
+}

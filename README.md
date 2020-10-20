@@ -23,11 +23,10 @@ pip install airstorm
 
 ```python
 from airstorm.base import Base
-base = Base('your_base_id', 'your_api_key', {'your': 'schema'})
-fruit_juice = base.FruitJuice('some_fruit_juice_id')  # Accessing the model for the "Fruit Juices" table.
-price_tag = fruit_juice.price_tag  # Accessing the "Price Tag" field value.
-for fruit in fruit_juice.fruits:  # Accessing a linked record in a breeze.
-    print(fruit.name)
+jamba_juice = Base('your_base_id', 'your_api_key', {'your': 'schema'})
+smoothy = jamba_juice.Smoothie('some_smoothie_id')  # Get your table record.
+for fruit in smoothy.fruits:  # Get linked record in a breeze.
+    print(fruit.name)  # Access any field data.
 ```
 
 ## Getting the Schema
@@ -41,6 +40,5 @@ The following [gist](https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a5
 
 * Downlading schema automatically using pyppeteer.
 * Field validation where possible.
-* Auto-generated model lists.
 * Push changes. Currently we are read-only.
 * Advance queries. Lot to think about here.

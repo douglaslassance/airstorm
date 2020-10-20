@@ -1,10 +1,7 @@
-"""Module holding the model class.
-"""
-
 import logging
 
-from .cache import Cache
 from .fields import Field
+from .cache import Cache
 from .functions import to_snake_case
 
 
@@ -34,11 +31,21 @@ class Model(type):
                 return self._record_id == other._record_id
             return False
 
+        def delete(self):
+            """TODO: Delete record in Airtable."""
+            logging.warn("Not implemented yet.")
+
+        def push(self):
+            """ TODO: Push record changes to Airtable."""
+            logging.warn("Not implemented yet.")
+
         methods = {
             "__init__": __init__,
             "__str__": __str__,
             "__bool__": __bool__,
             "__eq__": __eq__,
+            "delete": delete,
+            "push": push,
         }
         dict_.update(methods)
 
@@ -52,44 +59,27 @@ class Model(type):
         }
         dict_.update(attributes)
 
-        model = super(Model, cls).__new__(cls, name, bases, dict_)
-        model._base._model_by_id[dict_["_schema"]["id"]] = model
+        class_ = super(Model, cls).__new__(cls, name, bases, dict_)
+        class_._base._model_by_id[dict_["_schema"]["id"]] = class_
 
-        logging.info(" ".join([name, model._base._id, model._base._api_key, model._id]))
-        model._cache = Cache(
-            model._base._id, model._base._api_key, model._id, index=dict_["_indexed"]
+        logging.info(
+            " ".join([name, class_._base._id, class_._base._api_key, class_._id])
+        )
+        class_._cache = Cache(
+            class_._base._id, class_._base._api_key, class_._id, index=dict_["_indexed"]
         )
 
         # Creating field (column) attributes.
-        for field_schema in model._schema["columns"]:
+        for field_schema in class_._schema["columns"]:
             # Snake casing the field name for the attribute name..
             attribute_name = to_snake_case(field_schema["name"])
             # Informing of any field name conflicts. Technically Airtable allows to have
             # multiple column with the same name, but our API cannot support it for
             # obvious reason. As the result first arrived, first served.
-            if hasattr(model, attribute_name):
+            if hasattr(class_, attribute_name):
                 msg = 'Attribute "{}" on {} is already reserved.'
-                msg = msg.format(attribute_name, model)
+                msg = msg.format(attribute_name, class_)
                 logging.warning(msg)
-            setattr(model, attribute_name, Field(model, field_schema))
+            setattr(class_, attribute_name, Field(class_, field_schema))
 
-        return model
-
-    @classmethod
-    def _add_property(cls, class_: object, name: str, attr: str, doc=""):
-        """Adds a property to a class.
-
-        Args:
-            class_ (type): The class on which we add this property.
-            name (str): The name for the property.
-            attr (str): The attribute that property is affecting.
-            docs (str, optional): The docstring for this property.
-        """
-        setattr(
-            class_,
-            name,
-            property(
-                fget=lambda class_: getattr(class_, attr),
-                doc=doc,
-            ),
-        )
+        return class_

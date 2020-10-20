@@ -1,6 +1,3 @@
-"""This module holds general purpose functions.
-"""
-
 import inflection
 
 
