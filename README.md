@@ -38,7 +38,7 @@ The following [gist](https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a5
 
 ## Roadmap
 
-* Downlading schema automatically using pyppeteer.
 * Field validation where possible.
 * Push changes. Currently we are read-only.
+* Downlading schema automatically using pyppeteer.
 * Advance queries. Lot to think about here.

@@ -1,3 +1,6 @@
+from .functions import to_snake_case
+
+
 class Field:
     """This property like object will map against a table field exposed as a snake_cased
     attribute on the model.
@@ -25,6 +28,7 @@ class Field:
         self._name = schema["name"]
         self._value = 5
         self._model = model
+        self._attribute_name = to_snake_case(self._name)
         self.__doc__ = schema.get("description", "{} field.".format(schema["name"]))
 
     def __get__(self, instance, owner):

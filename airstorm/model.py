@@ -24,6 +24,11 @@ class Model(type):
             )
 
         def __bool__(self):  # noqa: N807
+            """Will return whether or not the record exists in Airtable.
+
+            Returns:
+                bool: Whether the record exists.
+            """
             return bool(self._record_id)
 
         def __eq__(self, other):  # noqa: N807
@@ -31,21 +36,26 @@ class Model(type):
                 return self._record_id == other._record_id
             return False
 
-        def delete(self):
+        def __del__(self):
             """TODO: Delete record in Airtable."""
-            logging.warn("Not implemented yet.")
+            logging.warning("Not implemented yet.")
 
         def push(self):
             """ TODO: Push record changes to Airtable."""
-            logging.warn("Not implemented yet.")
+            logging.warning("Not implemented yet.")
+
+        def revert(self):
+            """ TODO: Revert record local change."""
+            logging.warning("Not implemented yet.")
 
         methods = {
             "__init__": __init__,
             "__str__": __str__,
             "__bool__": __bool__,
             "__eq__": __eq__,
-            "delete": delete,
+            "__del__": __del__,
             "push": push,
+            "revert": revert,
         }
         dict_.update(methods)
 
@@ -83,3 +93,7 @@ class Model(type):
             setattr(class_, attribute_name, Field(class_, field_schema))
 
         return class_
+
+    def find(self, formula):
+        """ TODO: Return first found record by field value."""
+        logging.warn("Not implemented yet.")

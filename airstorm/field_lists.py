@@ -1,5 +1,4 @@
 from collections.abc import Iterable
-from .functions import to_snake_case
 from .fields import Field
 
 
@@ -23,7 +22,6 @@ class FieldList(object):
     def __init__(self, field):
         object.__init__(self)
         self._field = field
-        self._attribute_name = to_snake_case(field._name)
         self.__doc__ = field.__doc__
 
     def __get__(self, instance, owner):
@@ -31,7 +29,7 @@ class FieldList(object):
             return self
         values = []
         for record in instance:
-            values.append(getattr(record, self._attribute_name))
+            values.append(getattr(record, self._field._attribute_name))
         return values
 
 
