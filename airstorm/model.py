@@ -16,7 +16,7 @@ class Model(type):
             record = self._cache.get(record_id)
             self._record_id = record_id if record else ""
 
-        def __str__(self):  # noqa: N807
+        def __repr__(self):  # noqa: N807
             return '<{}("{}") {}>'.format(
                 type(self).__name__,
                 self._record_id,
@@ -36,24 +36,24 @@ class Model(type):
                 return self._record_id == other._record_id
             return False
 
-        def __del__(self):  # noqa: N807
+        def delete(self):  # noqa: N807
             """TODO: Delete record in Airtable."""
-            logging.warning("Not implemented yet.")
+            logging.warning("delete implemented yet.")
 
         def push(self):
             """ TODO: Push record changes to Airtable."""
-            logging.warning("Not implemented yet.")
+            logging.warning("push implemented yet.")
 
         def revert(self):
             """ TODO: Revert record local change."""
-            logging.warning("Not implemented yet.")
+            logging.warning("revert implemented yet.")
 
         methods = {
             "__init__": __init__,
-            "__str__": __str__,
+            "__repr__": __repr__,
             "__bool__": __bool__,
             "__eq__": __eq__,
-            "__del__": __del__,
+            "delete": delete,
             "push": push,
             "revert": revert,
         }
@@ -63,6 +63,7 @@ class Model(type):
             "_id": dict_["_schema"]["id"],
             "_name": dict_["_schema"]["name"],
             "_primary_field": dict_["_schema"]["primaryColumnName"],
+            "_field_by_id": {},
             "__doc__": dict_["_schema"].get(
                 "description", "{} model.".format(dict_["_schema"]["name"])
             ),
@@ -75,9 +76,7 @@ class Model(type):
         logging.info(
             " ".join([name, class_._base._id, class_._base._api_key, class_._id])
         )
-        class_._cache = Cache(
-            class_._base._id, class_._base._api_key, class_._id, index=dict_["_indexed"]
-        )
+        class_._cache = Cache(class_)
 
         # Creating field (column) attributes.
         for field_schema in class_._schema["columns"]:
@@ -90,11 +89,21 @@ class Model(type):
                 msg = 'Attribute "{}" on {} is already reserved.'
                 msg = msg.format(attribute_name, class_)
                 logging.warning(msg)
-            setattr(class_, attribute_name, Field(class_, field_schema))
+            field = Field(class_, field_schema)
+            setattr(class_, attribute_name, field)
+            class_._field_by_id[field_schema["id"]] = field
 
         return class_
 
-    def find(cls, formula):
-        """ TODO: Return first found record by field value."""
+    def find(cls, formula=""):
+        """Return first found record by field value.
+
+        Args: formula (str, optional): A airtable formula to filter the search. Lean
+            more about writing valid formulas at
+            https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference.
+
+        Returns:
+            airstorm.model.Model: The found record.
+        """
         records = cls._base._model_list_by_id[cls._schema["id"]].find(formula=formula)
         return records[0] if records else cls()

@@ -20,20 +20,20 @@ class ModelList(type):
                     raise ValueError(message.format(type(self), self._model))
             list.__init__(self, records)
 
-        def __del__(self):  # noqa: N807
+        def delete(self):  # noqa: N807
             """TODO: Delete records in Airtable."""
             # pylint: disable=unused-argument
-            logging.warning("Not implemented yet.")
+            logging.warning("delete implemented yet.")
 
         def push(self):
             """ TODO: Push records changes to Airtable."""
             # pylint: disable=unused-argument
-            logging.warning("Not implemented yet.")
+            logging.warning("push implemented yet.")
 
         def revert(self):
             """TODO: Revert records local changes."""
             # pylint: disable=unused-argument
-            logging.warning("Not implemented yet.")
+            logging.warning("revert implemented yet.")
 
         def grouped(self, field: Field):
             """Return records grouped by a field value."""
@@ -84,7 +84,7 @@ class ModelList(type):
 
         methods = {
             "__init__": __init__,
-            "__del__": __del__,
+            "delete": delete,
             "revert": revert,
             "push": push,
             "grouped": grouped,
@@ -112,11 +112,11 @@ class ModelList(type):
             https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference.
 
         Returns:
-            TYPE: Description
+            airstorm.model_list.ModelList: The found records.
         """
         # pylint: disable=protected-access, no-value-for-parameter
-        cache = cls._model._cache.get_all(formula=formula)
+        cache_records = cls._model._cache.select(formula=formula)
         records = []
-        for id_ in cache:
+        for id_ in cache_records:
             records.append(cls._model(id_))
         return cls(*records)

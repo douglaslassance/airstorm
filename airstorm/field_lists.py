@@ -1,5 +1,8 @@
+import logging
+
 from collections.abc import Iterable
 from .fields import Field
+from .functions import to_snake_case
 
 
 class FieldList(object):
@@ -27,6 +30,24 @@ class FieldList(object):
     def __get__(self, instance, owner):
         if instance is None:
             return self
+
+        # If this field has a symmetric field we will make sure we get all necessary
+        # records as one select.
+        symmetric_model = self._field.symmetric_field()._model
+        # This optimization is not necessary if the model is indexed as all
+        # records would already have been selected.
+        if not symmetric_model._indexed:
+            ids = set()
+            for record in instance:
+                field = getattr(type(record), self._field._attribute_name)
+                ids.update(field.raw_value(record))
+            # Making sure we only select records that have not been already cached.
+            ids = [_ for _ in ids if _ not in symmetric_model._cache]
+            if ids:
+                formula = 'SEARCH(RECORD_ID(), "{}")'.format(",".join(ids))
+                logging.info("Performing pre-select.")
+                symmetric_model._cache.select(formula=formula)
+
         values = []
         for record in instance:
             values.append(getattr(record, self._field._attribute_name))

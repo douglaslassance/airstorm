@@ -12,7 +12,8 @@
                 {
                     "id": "fldnl2M1LXxCNA0D7",
                     "name": "Name",
-                    "type": "text"
+                    "type": "text",
+                    "typeOptions": null
                 },
                 {
                     "id": "fldV0Jhec4PtvRXlD",
@@ -48,6 +49,27 @@
                         },
                         "resultType": "text"
                     }
+                },
+                {
+                    "id": "fldV0HW3eYhFIAzL3",
+                    "name": "Orders",
+                    "type": "number",
+                    "typeOptions": {
+                        "format": "integer",
+                        "negative": false,
+                        "validatorName": "positive"
+                    }
+                },
+                {
+                    "id": "fldO1DFPbwTOlP6nv",
+                    "name": "Barista",
+                    "type": "foreignKey",
+                    "typeOptions": {
+                        "relationship": "one",
+                        "foreignTableId": "tblCFc3loq2ATQTdH",
+                        "symmetricColumnId": "fld6egFoWMWPiFUjC",
+                        "unreversed": true
+                    }
                 }
             ]
         },
@@ -61,7 +83,8 @@
                 {
                     "id": "fld3m0mVqjOdKCoSK",
                     "name": "Name",
-                    "type": "text"
+                    "type": "text",
+                    "typeOptions": null
                 },
                 {
                     "id": "fldkKLbLySgFrXTPU",
@@ -112,6 +135,44 @@
                 },
                 {
                     "id": "fldKioIOTDHTg13tj",
+                    "name": "ID",
+                    "type": "formula",
+                    "typeOptions": {
+                        "formulaTextParsed": "RECORD_ID()",
+                        "dependencies": {
+                            "referencedColumnIdsForValue": []
+                        },
+                        "resultType": "text"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "tblCFc3loq2ATQTdH",
+            "isEmpty": false,
+            "name": "Baristas",
+            "nameForUrl": "baristas",
+            "primaryColumnName": "Name",
+            "columns": [
+                {
+                    "id": "fldeAQ7sBV6KmO7ti",
+                    "name": "Name",
+                    "type": "text",
+                    "typeOptions": null
+                },
+                {
+                    "id": "fld6egFoWMWPiFUjC",
+                    "name": "Smoothies",
+                    "type": "foreignKey",
+                    "typeOptions": {
+                        "foreignTableId": "tblgeI1jinoGzStz2",
+                        "relationship": "many",
+                        "unreversed": true,
+                        "symmetricColumnId": "fldO1DFPbwTOlP6nv"
+                    }
+                },
+                {
+                    "id": "fld27TMVbkTCCTqtv",
                     "name": "ID",
                     "type": "formula",
                     "typeOptions": {

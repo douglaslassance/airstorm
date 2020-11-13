@@ -47,6 +47,7 @@ class Base:
         self._schema = schema
         self._model_by_id = {}
         self._model_list_by_id = {}
+        self._hits = 0
 
         for table_schema in self._schema["tables"]:
             table_name = table_schema["name"]
