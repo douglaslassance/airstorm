@@ -36,7 +36,7 @@ class Model(type):
                 return self._record_id == other._record_id
             return False
 
-        def __del__(self):
+        def __del__(self):  # noqa: N807
             """TODO: Delete record in Airtable."""
             logging.warning("Not implemented yet.")
 
@@ -94,6 +94,7 @@ class Model(type):
 
         return class_
 
-    def find(self, formula):
+    def find(cls, formula):
         """ TODO: Return first found record by field value."""
-        logging.warn("Not implemented yet.")
+        records = cls._base._model_list_by_id[cls._schema["id"]].find(formula=formula)
+        return records[0] if records else cls()

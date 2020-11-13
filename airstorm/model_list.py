@@ -6,10 +6,13 @@ from .field_lists import FieldList
 
 
 class ModelList(type):
-    def __new__(cls, name, bases, dict_):
-        # pylint: disable=protected-access
+    """The model list metaclass allows to generate model list classes for each existing
+    tables when loading the schema."""
 
-        def __init__(self, records=None):  # noqa: N807
+    def __new__(cls, name, bases, dict_):
+        # pylint: disable=protected-access, too-many-locals
+
+        def __init__(self, *records):  # noqa: N807
             records = records or []
             for record in records:
                 if not isinstance(record, self._model):
@@ -17,17 +20,20 @@ class ModelList(type):
                     raise ValueError(message.format(type(self), self._model))
             list.__init__(self, records)
 
-        def __del__(self):
+        def __del__(self):  # noqa: N807
             """TODO: Delete records in Airtable."""
-            logging.warn("Not implemented yet.")
+            # pylint: disable=unused-argument
+            logging.warning("Not implemented yet.")
 
         def push(self):
             """ TODO: Push records changes to Airtable."""
-            logging.warn("Not implemented yet.")
+            # pylint: disable=unused-argument
+            logging.warning("Not implemented yet.")
 
         def revert(self):
             """TODO: Revert records local changes."""
-            logging.warn("Not implemented yet.")
+            # pylint: disable=unused-argument
+            logging.warning("Not implemented yet.")
 
         def grouped(self, field: Field):
             """Return records grouped by a field value."""
@@ -98,6 +104,19 @@ class ModelList(type):
                 setattr(class_, inflection.pluralize(attribute_name), FieldList(field))
         return class_
 
-    def find(cls, formula):
-        """Return records with specific field value."""
-        print(100, cls._model.id, field._id, value)
+    def find(cls, formula=""):
+        """Return records with specific field value.
+
+        Args: formula (str, optional): A airtable formula to filter the search. Lean
+            more about writing valid formulas at
+            https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference.
+
+        Returns:
+            TYPE: Description
+        """
+        # pylint: disable=protected-access, no-value-for-parameter
+        cache = cls._model._cache.get_all(formula=formula)
+        records = []
+        for id_ in cache:
+            records.append(cls._model(id_))
+        return cls(*records)

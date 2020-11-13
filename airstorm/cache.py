@@ -44,3 +44,15 @@ class Cache(dict):
             return self[key]
         except KeyError:
             return default
+
+    def get_all(self, formula=""):
+        kwargs = {}
+        if formula:
+            kwargs["formula"] = formula
+        records = self._airtable.get_all(**kwargs)
+        cache = {}
+        for record in records:
+            id_ = record["id"]
+            cache[id_] = record
+        self.update(cache)
+        return cache

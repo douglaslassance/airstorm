@@ -8,10 +8,10 @@ Airstorm is a dynamic Python ORM for [Airtable](https://airtable.com). It allows
 
 ## Main Features
 
-* Object-oriented interface.
-* Dynamic generation of data models from schema.
-* Automatic foreign-key resolution.
-* Caching layer to avoid abusing the Airtable API.
+-   Object-oriented interface.
+-   Dynamic generation of data models from schema.
+-   Automatic foreign-key resolution.
+-   Caching layer to avoid abusing the Airtable API.
 
 ## Installation
 
@@ -27,6 +27,7 @@ jamba_juice = Base('your_base_id', 'your_api_key', {'your': 'schema'})
 smoothy = jamba_juice.Smoothie('some_smoothie_id')  # Get your table record.
 for fruit in smoothy.fruits:  # Get linked record in a breeze.
     print(fruit.name)  # Access any field data.
+print(smoothy.fruits.names) # Access to mutliple record field data at once.
 ```
 
 ## Getting the Schema
@@ -38,7 +39,7 @@ The following [gist](https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a5
 
 ## Roadmap
 
-* Field validation where possible.
-* Push changes. Currently we are read-only.
-* Downlading schema automatically using pyppeteer.
-* Advance queries. Lot to think about here.
+-   Field validation where possible.
+-   Push changes. Currently we are read-only.
+-   Downlading schema automatically using pyppeteer.
+-   Pythonic formulas.
