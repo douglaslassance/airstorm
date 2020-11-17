@@ -31,6 +31,9 @@ class Model(type):
             """
             return bool(self._record_id)
 
+        def __hash__(self):  # noqa: N807
+            return hash(self._record_id) or id(self)
+
         def __eq__(self, other):  # noqa: N807
             if isinstance(other, type(self)):
                 return self._record_id == other._record_id
@@ -52,6 +55,7 @@ class Model(type):
             "__init__": __init__,
             "__repr__": __repr__,
             "__bool__": __bool__,
+            "__hash__": __hash__,
             "__eq__": __eq__,
             "delete": delete,
             "push": push,
