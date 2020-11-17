@@ -20,8 +20,11 @@ class Model(type):
             return '<{}("{}") {}>'.format(
                 type(self).__name__,
                 self._record_id,
-                str(getattr(self, to_snake_case(self._primary_field))),
+                self.__str__(),
             )
+
+        def __str__(self):  # noqa: N807
+            return str(getattr(self, to_snake_case(self._primary_field)))
 
         def __bool__(self):  # noqa: N807
             """Will return whether or not the record exists in Airtable.
@@ -54,6 +57,7 @@ class Model(type):
         methods = {
             "__init__": __init__,
             "__repr__": __repr__,
+            "__str__": __str__,
             "__bool__": __bool__,
             "__hash__": __hash__,
             "__eq__": __eq__,
