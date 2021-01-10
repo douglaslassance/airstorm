@@ -2,7 +2,6 @@ import logging
 
 from collections.abc import Iterable
 from .fields import Field
-from .functions import to_snake_case
 
 
 class FieldList(object):
