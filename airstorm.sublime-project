@@ -7,12 +7,12 @@
 				"pip",
 				"install",
 				"--editable",
-				".[ci]",
+				".[ci]"
 			],
-			"name": "Install requirements",
+			"name": "Install requirements with PyPI",
+			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH",
 			"selector": "source.python",
-			"working_dir": "$project_path",
-			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
+			"working_dir": "$project_path"
 		},
 		{
 			"cmd":
@@ -22,9 +22,9 @@
 				"--cov=airstorm"
 			],
 			"name": "Test with pytest",
+			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH",
 			"selector": "source.python",
-			"working_dir": "$project_path",
-			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
+			"working_dir": "$project_path"
 		},
 		{
 			"cmd":
@@ -34,9 +34,9 @@
 				"./docs/build"
 			],
 			"name": "Document with Sphinx",
+			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH",
 			"selector": "source.python",
-			"working_dir": "$project_path",
-			"path": "$HOME/.virtualenvs/airstorm/bin:$PATH"
+			"working_dir": "$project_path"
 		}
 	],
 	"folders":
