@@ -119,7 +119,15 @@ def test_model_list():
     base = Base("", "", SCHEMA)
     _load_cache(base)
     fruits = base.FruitList.find()
+    apple = base.Fruit("recLSJFOqk6hYiWKg")
+    mango = base.Fruit("recyEwR4TBE89mNsb")
     assert fruits.grouped(base.Fruit.season) == {
-        "Winter": base.FruitList(base.Fruit("recLSJFOqk6hYiWKg")),
-        "Summer": base.FruitList(base.Fruit("recyEwR4TBE89mNsb")),
+        "Winter": base.FruitList(apple),
+        "Summer": base.FruitList(mango),
     }
+    assert fruits.filtered(base.Fruit.season, "Winter") == base.FruitList(apple)
+    splits = (base.FruitList(apple), base.FruitList(mango))
+    assert fruits.split(base.Fruit.season, "Winter") == splits
+    assert fruits.sorted(base.Fruit.season) == base.FruitList(mango, apple)
+    reversed = base.FruitList(apple, mango)
+    assert fruits.sorted(base.Fruit.season, reverse=True) == reversed

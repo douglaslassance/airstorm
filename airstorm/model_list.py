@@ -73,17 +73,16 @@ class ModelList(type):
                     false.append(record)
             return true, false
 
-        def sorted(self, field: Field, reverse=False):
+        def sorted_(self, field: Field, reverse=False):
             """Return the list sorted by field."""
             # pylint: disable=redefined-builtin, no-value-for-parameter
             # pylint: disable=unexpected-keyword-arg
-            return type(self)(
-                sorted(
-                    self,
-                    key=lambda x: getattr(x, field._attribute_name),
-                    reverse=reverse,
-                )
+            sorted_ = sorted(
+                self,
+                key=lambda record: getattr(record, field._attribute_name),
+                reverse=reverse,
             )
+            return type(self)(*sorted_)
 
         methods = {
             "__init__": __init__,
@@ -93,6 +92,7 @@ class ModelList(type):
             "grouped": grouped,
             "filtered": filtered,
             "split": split,
+            "sorted": sorted_,
         }
         dict_.update(methods)
 
