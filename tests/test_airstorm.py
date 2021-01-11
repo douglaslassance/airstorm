@@ -96,13 +96,30 @@ def test_access_data():
     # By filling the cache with dummy data we won't need to hit Airtable.
     # This is why we do not need to pass a base ID and API key.
     base = Base("", "", SCHEMA)
-
-    with open(os.path.join(DIRNAME, "resources", "cache.json")) as cache_file:
-        cache = json.loads(cache_file.read())
-
-    for key in cache:
-        getattr(base, key)._cache = cache[key]
-
+    _load_cache(base)
     smoothie = base.Smoothy("recxrTqISZmVBvDMs")
     assert smoothie.id == "recxrTqISZmVBvDMs", "Failed to initialize record data."
     assert smoothie.fruits.names == ["Apple", "Mango"], "Failed to field access data."
+
+
+def _load_cache(base):
+    with open(os.path.join(DIRNAME, "resources", "cache.json")) as cache_file:
+        cache = json.loads(cache_file.read())
+
+    for model_key in cache:
+        model = getattr(base, model_key)
+        model._indexed = True
+        for key in cache[model_key]:
+            model._cache[key] = cache[model_key][key]
+
+
+def test_model_list():
+    # By filling the cache with dummy data we won't need to hit Airtable.
+    # This is why we do not need to pass a base ID and API key.
+    base = Base("", "", SCHEMA)
+    _load_cache(base)
+    fruits = base.FruitList.find()
+    assert fruits.grouped(base.Fruit.season) == {
+        "Winter": base.FruitList(base.Fruit("recLSJFOqk6hYiWKg")),
+        "Summer": base.FruitList(base.Fruit("recyEwR4TBE89mNsb")),
+    }

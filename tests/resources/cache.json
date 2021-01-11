@@ -23,9 +23,7 @@
           "recxrTqISZmVBvDMs",
           "reckgLhuI7SpL6jwK"
         ],
-        "Seasons": [
-          "Winter"
-        ],
+        "Season": "Winter",
         "ID": "recLSJFOqk6hYiWKg"
       },
       "createdTime": "2020-10-19T15:31:38.000Z"
@@ -37,9 +35,7 @@
         "Smoothies": [
           "recxrTqISZmVBvDMs"
         ],
-        "Seasons": [
-          "Summer"
-        ],
+        "Season": "Summer",
         "ID": "recyEwR4TBE89mNsb"
       },
       "createdTime": "2020-10-19T15:31:38.000Z"

@@ -70,6 +70,15 @@
                         "symmetricColumnId": "fld6egFoWMWPiFUjC",
                         "unreversed": true
                     }
+                },
+                {
+                    "id": "fldgjbK4cJXxGZ9zf",
+                    "name": "Created On",
+                    "type": "date",
+                    "typeOptions": {
+                        "isDateTime": false,
+                        "dateFormat": "Local"
+                    }
                 }
             ]
         },
@@ -88,8 +97,8 @@
                 },
                 {
                     "id": "fldkKLbLySgFrXTPU",
-                    "name": "Seasons",
-                    "type": "multiSelect",
+                    "name": "Season",
+                    "type": "select",
                     "typeOptions": {
                         "choiceOrder": [
                             "selDhJWAFO9m7GcYy",

@@ -16,7 +16,7 @@ class ModelList(type):
             records = records or []
             for record in records:
                 if not isinstance(record, self._model):
-                    message = "{} can only initialize with a list of {}."
+                    message = "{} can only initialize with one or more {} arguments."
                     raise ValueError(message.format(type(self), self._model))
             list.__init__(self, records)
 
@@ -39,8 +39,11 @@ class ModelList(type):
             """Return records grouped by a field value."""
             grouped = {}
             for record in self:
-                value = getattr(record, field._attribute_name)
-                grouped.setdefault(value, type(self)()).append(record)
+                values = getattr(record, field._attribute_name)
+                if not isinstance(values, list):
+                    values = [values]
+                for value in values:
+                    grouped.setdefault(value, type(self)()).append(record)
             return grouped
 
         def filtered(self, field: Field, value):
