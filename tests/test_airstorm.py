@@ -7,11 +7,14 @@ import json
 
 from airstorm.base import Base
 from airstorm.model import Model
+from airstorm.model_list import ModelList
 from airstorm.fields import Field
+from airstorm.field_lists import FieldList
 from airstorm.functions import to_snake_case, to_singular_pascal_case
 
-with open(os.path.join(os.path.dirname(__file__), "resources", "schema.json")) as fle:
-    SCHEMA = json.loads(fle.read())
+DIRNAME = os.path.dirname(__file__)
+with open(os.path.join(DIRNAME, "resources", "schema.json")) as SCHEMA_FILE:
+    SCHEMA = json.loads(SCHEMA_FILE.read())
 
 
 def test_to_snake_case():
@@ -52,24 +55,79 @@ def test_to_singular_pascal_case():
         assert conversion == "FooBar", '"{}" > "{}"'.format(name, conversion)
 
 
-def test_loaded_tables():
+def test_load_schema():
     base = Base("", "", SCHEMA)
-    loaded_tables = False
-    for model in dir(base):
-        model = getattr(base, model)
+
+    # Asserting models.
+    loaded = False
+    for attr in dir(base):
+        model = getattr(base, attr)
         if isinstance(model, Model):
-            for field in dir(model):
-                field = getattr(model, field)
+            for model_attr in dir(model):
+                field = getattr(model, model_attr)
                 if isinstance(field, Field):
-                    loaded_tables = True
+                    loaded = True
                     break
-        if loaded_tables:
+        if loaded:
             break
-    assert loaded_tables, "Was not able to load tables."
+    assert loaded, "Was not able to load models."
+
+    # Asserting model lists.
+    loaded = False
+    for attr in dir(base):
+        model_list = getattr(base, attr)
+        if isinstance(model_list, ModelList):
+            for model_list_attr in dir(model_list):
+                field_list = getattr(model_list, model_list_attr)
+                if isinstance(field_list, FieldList):
+                    loaded = True
+                    break
+        if loaded:
+            break
+    assert loaded, "Was not able to load model lists."
+
+    # Asserting attributes.
+    assert base.Smoothy._id == "tblgeI1jinoGzStz2", "Cannot get model table ID."
+    assert base.Fruit._id != "tblgeI1jinoGzStz2", "Models are sharing table IDs."
+    assert base.Smoothy.name._id == "fldnl2M1LXxCNA0D7", "Getting field ID failed."
 
 
-def test_dynamic_attributes():
+def test_access_data():
+    # By filling the cache with dummy data we won't need to hit Airtable.
+    # This is why we do not need to pass a base ID and API key.
     base = Base("", "", SCHEMA)
-    assert base.Context._id == "tblCko8U7PjPYPNpf", "Cannot get model table ID."
-    assert base.Asset._id != "tbl00YIV1HyHLE56A", "Models are sharing table IDs."
-    assert base.Context.name._id == "fld5tR1r0jBCqjG06", "Getting field ID failed."
+    _load_cache(base)
+    smoothie = base.Smoothy("recxrTqISZmVBvDMs")
+    assert smoothie.id == "recxrTqISZmVBvDMs", "Failed to initialize record data."
+    assert smoothie.fruits.names == ["Apple", "Mango"], "Failed to field access data."
+
+
+def _load_cache(base):
+    with open(os.path.join(DIRNAME, "resources", "cache.json")) as cache_file:
+        cache = json.loads(cache_file.read())
+
+    for model_key in cache:
+        model = getattr(base, model_key)
+        model._indexed = True
+        for key in cache[model_key]:
+            model._cache[key] = cache[model_key][key]
+
+
+def test_model_list():
+    # By filling the cache with dummy data we won't need to hit Airtable.
+    # This is why we do not need to pass a base ID and API key.
+    base = Base("", "", SCHEMA)
+    _load_cache(base)
+    fruits = base.FruitList.find()
+    apple = base.Fruit("recLSJFOqk6hYiWKg")
+    mango = base.Fruit("recyEwR4TBE89mNsb")
+    assert fruits.grouped(base.Fruit.season) == {
+        "Winter": base.FruitList(apple),
+        "Summer": base.FruitList(mango),
+    }
+    assert fruits.filtered(base.Fruit.season, "Winter") == base.FruitList(apple)
+    splits = (base.FruitList(apple), base.FruitList(mango))
+    assert fruits.split(base.Fruit.season, "Winter") == splits
+    assert fruits.sorted(base.Fruit.season) == base.FruitList(mango, apple)
+    reversed = base.FruitList(apple, mango)
+    assert fruits.sorted(base.Fruit.season, reverse=True) == reversed
