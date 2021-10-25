@@ -20,7 +20,7 @@ setup(
     description="A Python ORM for Airtable.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/playsthetic/airstorm",
+    url="https://github.com/douglaslassance/airstorm",
     author=airstorm.__author__,
     author_email=airstorm.__email__,
     license=airstorm.__license__,
