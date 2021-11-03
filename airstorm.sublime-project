@@ -8,7 +8,7 @@
             ".[ci]"
         ],
         "name": "Install requirements with PyPI",
-        "path": "$HOME/.virtualenvs/airstorm/bin:$PATH",
+        "path": "$WORKON_HOME/airstorm/bin:$PATH",
         "selector": "source.python",
         "working_dir": "$project_path"
     },
@@ -19,7 +19,7 @@
             "--cov=airstorm"
         ],
         "name": "Test with pytest",
-        "path": "$HOME/.virtualenvs/airstorm/bin:$PATH",
+        "path": "$WORKON_HOME/airstorm/bin:$PATH",
         "selector": "source.python",
         "working_dir": "$project_path"
     },
@@ -30,7 +30,7 @@
             "./docs/build"
         ],
         "name": "Document with Sphinx",
-        "path": "$HOME/.virtualenvs/airstorm/bin:$PATH",
+        "path": "$WORKON_HOME/airstorm/bin:$PATH",
         "selector": "source.python",
         "working_dir": "$project_path"
     }],
