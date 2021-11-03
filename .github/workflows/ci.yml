@@ -32,6 +32,6 @@ jobs:
       - name: Document with sphinx
         run: |
           sphinx-build ./docs/source ./docs/build
-      - name: Upload report on CodeCove
+      - name: Upload report on CodeCov
         run: |
           bash <(curl -s https://codecov.io/bash)
