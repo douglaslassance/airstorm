@@ -7,23 +7,24 @@ import sys
 from setuptools import setup
 
 dirname = os.path.dirname(__file__)
-sys.path.append(dirname)
-import airstorm  # noqa: E402 pylint: disable=C0413
+info = {}
+with open(os.path.join(dirname, "airstorm", "__info__.py"), mode="r") as f:
+    exec(f.read(), info)  # pylint: disable=W0122
 
 # Get the long description from the README file.
 with open(os.path.join(dirname, "README.md"), encoding="utf-8") as fle:
     long_description = fle.read()
 
 setup(
-    name=airstorm.__name__,
-    version=airstorm.__version__,
+    name=info.get("__name__", ""),
+    version=info.get("__version__", ""),
     description="A Python ORM for Airtable.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/douglaslassance/airstorm",
-    author=airstorm.__author__,
-    author_email=airstorm.__email__,
-    license=airstorm.__license__,
+    author=info.get("__author__", ""),
+    author_email=info.get("__email__", ""),
+    license=info.get("__license__", ""),
     packages=["airstorm"],
     install_requires=[
         "airtable-python-wrapper~=0.15",

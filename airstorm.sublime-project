@@ -9,7 +9,6 @@
 			],
 			"name": "Install requirements with PyPI",
 			"path": "$WORKON_HOME/airstorm/bin:$PATH",
-			"selector": "source.python",
 			"working_dir": "$project_path"
 		},
 		{
@@ -20,7 +19,6 @@
 			],
 			"name": "Test with pytest",
 			"path": "$WORKON_HOME/airstorm/bin:$PATH",
-			"selector": "source.python",
 			"working_dir": "$project_path"
 		},
 		{
@@ -31,7 +29,6 @@
 			],
 			"name": "Document with Sphinx",
 			"path": "$WORKON_HOME/airstorm/bin:$PATH",
-			"selector": "source.python",
 			"working_dir": "$project_path"
 		}
 	],
