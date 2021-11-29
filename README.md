@@ -43,3 +43,14 @@ The following [gist](https://gist.github.com/douglaslassance/0ba26f2cf2aa9bb21a5
 -   Push changes. Currently we are read-only.
 -   Downlading schema automatically using pyppeteer.
 -   Pythonic formulas.
+
+## Development
+
+This projects requires the following:
+
+-   [Python >=3.7.9](https://www.python.org/downloads/release/python-379/)
+-   [virtualenwrapper](https://pypi.org/project/virtualenvwrapper/) (macOS/Linux)
+-   [virtualenwrapper-win](https://pypi.org/project/virtualenvwrapper-win/) (Windows)
+
+Make sure your `WORKON_HOME` environment variable is set on Windows, and create a `airstorm` virtual environment with `mkvirtualenv`.
+Build systems for installing requirements and running tests are on board of the SublimeText project.
