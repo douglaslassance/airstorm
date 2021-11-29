@@ -9,6 +9,9 @@
 			],
 			"name": "Install requirements with PyPI",
 			"path": "$WORKON_HOME/airstorm/bin:$PATH",
+			"windows": {
+				"path": "$WORKON_HOME/airstorm/Scripts;$PATH",
+			},
 			"working_dir": "$project_path"
 		},
 		{
@@ -19,6 +22,9 @@
 			],
 			"name": "Test with pytest",
 			"path": "$WORKON_HOME/airstorm/bin:$PATH",
+			"windows": {
+				"path": "$WORKON_HOME/airstorm/Scripts;$PATH",
+			},
 			"working_dir": "$project_path"
 		},
 		{
@@ -29,6 +35,9 @@
 			],
 			"name": "Document with Sphinx",
 			"path": "$WORKON_HOME/airstorm/bin:$PATH",
+			"windows": {
+				"path": "$WORKON_HOME/airstorm/Scripts;$PATH",
+			},
 			"working_dir": "$project_path"
 		}
 	],
