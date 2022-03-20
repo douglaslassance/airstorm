@@ -16,7 +16,7 @@ with open(os.path.join(dirname, "README.md"), encoding="utf-8") as fle:
     long_description = fle.read()
 
 setup(
-    name=info.get("__name__", ""),
+    name="airstorm",
     version=info.get("__version__", ""),
     description="A Python ORM for Airtable.",
     long_description=long_description,
