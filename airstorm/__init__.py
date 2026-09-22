@@ -1,1 +1,1 @@
-from .__info__ import __version__, __copyright__, __email__, __author__
+from .__info__ import __version__, __copyright__, __author__
